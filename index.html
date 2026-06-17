@@ -528,24 +528,23 @@ This wizard will allow you create an OAPP...
 
   <div style="max-width:1100px;margin:0 auto">
     <h4 style="font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--cyan);margin:40px 0 20px;text-transform:uppercase">Save a Holon (via Zome)</h4>
-    <div class="code-example">// Create a new holon with custom properties
+    <pre style="background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Create a new holon with custom properties</span>
 <span class="keyword">var</span> myHolon = <span class="keyword">new</span> CustomHolon();
 myHolon.Name = <span class="string">"My Quest Reward"</span>;
 myHolon.Description = <span class="string">"Epic sword found in ancient ruins"</span>;
 myHolon.MetaData[<span class="string">"Rarity"</span>] = <span class="string">"Legendary"</span>;
 myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"150"</span>;
 
-// Save via Zome (auto-syncs to all configured providers)
+<span class="comment">// Save via Zome (auto-syncs to all configured providers)</span>
 <span class="keyword">var</span> result = <span class="keyword">await</span> zome.SaveAsync(myHolon);
 
 <span class="keyword">if</span> (!result.IsError && result.Result != <span class="keyword">null</span>)
     <span class="success">✓ Holon saved with ID: {result.Result.Id}</span>
 <span class="keyword">else</span>
-    <span class="comment">// Error handling: {result.Message}</span>
-    </div>
+    <span class="comment">// Error handling: {result.Message}</span></pre>
 
     <h4 style="font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--cyan);margin:40px 0 20px;text-transform:uppercase">Load a Holon (Query Across All Providers)</h4>
-    <div class="code-example">// Load a holon by ID (COSMIC finds it across all providers)
+    <pre style="background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Load a holon by ID (COSMIC finds it across all providers)</span>
 <span class="keyword">var</span> loaded = <span class="keyword">await</span> zome.GlobalHolonData.LoadHolonAsync&lt;CustomHolon&gt;(holonId);
 
 <span class="keyword">if</span> (!loaded.IsError && loaded.Result != <span class="keyword">null</span>)
@@ -556,11 +555,10 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"1
     Damage: {loaded.Result.MetaData[<span class="string">"Damage"</span>]}
     Created: {loaded.Result.CreatedDate}
     Version: {loaded.Result.Version}
-}
-    </div>
+}</pre>
 
     <h4 style="font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--cyan);margin:40px 0 20px;text-transform:uppercase">Save with Version Control (Auto-Tracking)</h4>
-    <div class="code-example"><span class="comment">// Update and save (COSMIC auto-tracks versions)</span>
+    <pre style="background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Update and save (COSMIC auto-tracks versions)</span>
 myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"200"</span>; <span class="comment">// Buff the weapon</span>
 
 <span class="keyword">var</span> updateResult = <span class="keyword">await</span> holon.SaveAsync&lt;CustomHolon&gt;();
@@ -569,11 +567,10 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
 <span class="success">✓ VersionId:</span> {updateResult.Result.VersionId}
 <span class="success">✓ PreviousVersionId:</span> {updateResult.Result.PreviousVersionId}
 <span class="success">✓ ModifiedDate:</span> {updateResult.Result.ModifiedDate}
-<span class="success">✓ ModifiedByAvatarId:</span> {updateResult.Result.ModifiedByAvatarId}
-    </div>
+<span class="success">✓ ModifiedByAvatarId:</span> {updateResult.Result.ModifiedByAvatarId}</pre>
 
     <h4 style="font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--cyan);margin:40px 0 20px;text-transform:uppercase">Query Holons by Metadata (Search Everything)</h4>
-    <div class="code-example"><span class="comment">// Find all legendary items created by an avatar</span>
+    <pre style="background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Find all legendary items created by an avatar</span>
 <span class="keyword">var</span> filter = <span class="keyword">new</span> Dictionary&lt;<span class="keyword">string</span>, <span class="keyword">object</span>&gt;()
 {
     { <span class="string">"Rarity"</span>, <span class="string">"Legendary"</span> },
@@ -582,11 +579,10 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
 
 <span class="keyword">var</span> results = <span class="keyword">await</span> STAR.OASISAPI.Data.LoadHolonsByMetaDataAsync&lt;CustomHolon&gt;(filter);
 
-<span class="success">✓ Found {results.Result.Count()} legendary items</span>
-    </div>
+<span class="success">✓ Found {results.Result.Count()} legendary items</span></pre>
 
     <h4 style="font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--cyan);margin:40px 0 20px;text-transform:uppercase">Work Across Celestial Bodies</h4>
-    <div class="code-example"><span class="comment">// Save to a planet (holons auto-replicate to all providers)</span>
+    <pre style="background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Save to a planet (holons auto-replicate to all providers)</span>
 <span class="keyword">var</span> planet = <span class="keyword">new</span> Planet();
 <span class="keyword">var</span> saveResult = <span class="keyword">await</span> planet.SaveHolonAsync&lt;CustomHolon&gt;(myHolon);
 
@@ -595,8 +591,7 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
 <span class="comment">// - All 40+ configured providers</span>
 <span class="comment">// - Accessible from any world, app, or system</span>
 
-<span class="success">✓ Holon synced to all backends instantly</span>
-    </div>
+<span class="success">✓ Holon synced to all backends instantly</span></pre>
   </div>
 </section>
 
