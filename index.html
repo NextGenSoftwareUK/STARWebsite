@@ -207,108 +207,15 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
   <div class="section-kicker">DEVELOPMENT KIT</div>
   <h2 class="section-title">STAR ODK: Build Once, Deploy Everywhere</h2>
   <span class="section-line"></span>
-  <svg class="hero-bg" viewBox="0 0 800 280" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <style>
-        @keyframes flowLeft { 0% { x: 150; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { x: 350; opacity: 0; } }
-        @keyframes flowRight { 0% { x: 450; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { x: 650; opacity: 0; } }
-        @keyframes starPulse { 0%,100% { r: 28; } 50% { r: 34; } }
-        @keyframes coronaPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 0.7; } }
-        @keyframes energyFlare { 0%,100% { opacity: 0.2; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.1); } }
-        .flow-left { animation: flowLeft 3s ease-in-out infinite; }
-        .flow-right { animation: flowRight 3s ease-in-out infinite; }
-        .star-core { animation: starPulse 2.5s ease-in-out infinite; }
-        .corona { animation: coronaPulse 2.5s ease-in-out infinite; }
-        .flare { animation: energyFlare 2.5s ease-in-out infinite; }
-      </style>
-      <filter id="glow"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      <filter id="starGlow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      <radialGradient id="starGradient" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#ffffff"/>
-        <stop offset="50%" stop-color="#00e5ff"/>
-        <stop offset="100%" stop-color="#0066cc"/>
-      </radialGradient>
-    </defs>
-
-    <!-- TOP: STARNET Omniverse Diagram -->
-    <defs>
-      <radialGradient id="rg1" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".18"/>
-        <stop offset="100%" stop-color="#050314" stop-opacity="0"/>
-      </radialGradient>
-      <filter id="glow-v"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      <filter id="glow-sm"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      <!-- holon hexagon -->
-      <g id="hx2">
-        <polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6" fill="rgba(139,92,246,.12)" stroke="#a78bfa" stroke-width="1"/>
-        <circle cx="0" cy="0" r="2.5" fill="#a78bfa"/>
-      </g>
-      <g id="hxc2">
-        <polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6" fill="rgba(0,229,255,.1)" stroke="#00e5ff" stroke-width="1"/>
-        <circle cx="0" cy="0" r="2.5" fill="#00e5ff"/>
-      </g>
-    </defs>
-
-    <ellipse cx="400" cy="45" rx="180" ry="125" fill="url(#rg1)"/>
-
-    <!-- faint constellation lines -->
-    <g opacity=".15" stroke="#8b5cf6" stroke-width="0.8">
-      <line x1="400" y1="45" x2="400" y2="0"/>
-      <line x1="400" y1="45" x2="262" y2="5"/>
-      <line x1="400" y1="45" x2="538" y2="5"/>
-      <line x1="400" y1="45" x2="175" y2="70"/>
-      <line x1="400" y1="45" x2="625" y2="70"/>
-      <line x1="400" y1="45" x2="400" y2="90"/>
-    </g>
-
-    <!-- Outer orbit ring (slow) -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="0 400 45" to="360 400 45" dur="64s" repeatCount="indefinite"/>
-      <ellipse cx="400" cy="45" rx="235" ry="145" fill="none" stroke="rgba(139,92,246,.12)" stroke-width="0.8" stroke-dasharray="5,6"/>
-      <use href="#hx2" x="625" y="70"/>
-      <use href="#hxc2" x="400" y="90"/>
-      <use href="#hx2" x="175" y="70"/>
-      <use href="#hx2" x="262" y="5"/>
-      <use href="#hxc2" x="538" y="5"/>
-    </g>
-
-    <!-- Mid orbit ring (reverse) -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="360 400 45" to="0 400 45" dur="46s" repeatCount="indefinite"/>
-      <ellipse cx="400" cy="45" rx="170" ry="107" fill="none" stroke="rgba(139,92,246,.13)" stroke-width="0.8" stroke-dasharray="4,5"/>
-      <use href="#hx2" x="520" y="80"/>
-      <use href="#hxc2" x="280" y="80"/>
-      <use href="#hx2" x="280" y="10"/>
-      <use href="#hx2" x="520" y="10"/>
-    </g>
-
-    <!-- Inner orbit ring -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="0 400 45" to="360 400 45" dur="34s" repeatCount="indefinite"/>
-      <ellipse cx="400" cy="45" rx="115" ry="75" fill="none" stroke="rgba(139,92,246,.14)" stroke-width="0.8" stroke-dasharray="3,4"/>
-      <use href="#hx2" x="465" y="67"/>
-      <use href="#hxc2" x="335" y="67"/>
-      <use href="#hx2" x="400" y="5"/>
-    </g>
-
-    <!-- data pulses -->
-    <circle r="3" fill="#a78bfa" opacity=".9" filter="url(#glow-sm)">
-      <animateMotion dur="3s" repeatCount="indefinite" path="M400,45 L262,5"/>
-    </circle>
-    <circle r="3" fill="#00e5ff" opacity=".9" filter="url(#glow-sm)">
-      <animateMotion dur="2.6s" repeatCount="indefinite" path="M625,70 L400,45"/>
-    </circle>
-    <circle r="3" fill="#a78bfa" opacity=".9" filter="url(#glow-sm)">
-      <animateMotion dur="3.4s" repeatCount="indefinite" path="M400,45 L175,70"/>
-    </circle>
-
-    <!-- Center core -->
-    <ellipse cx="400" cy="45" rx="46" ry="31" fill="none" stroke="rgba(139,92,246,.1)" stroke-width="0.8" stroke-dasharray="5,3">
-      <animateTransform attributeName="transform" type="rotate" from="0 400 45" to="360 400 45" dur="20s" repeatCount="indefinite"/>
-    </ellipse>
-    <circle cx="400" cy="45" r="8.5" fill="rgba(139,92,246,.2)" stroke="#8b5cf6" stroke-width="1" filter="url(#glow-v)">
-      <animate attributeName="r" values="8.5;10.5;8.5" dur="3s" repeatCount="indefinite"/>
-    </circle>
+  <div style="max-width:700px;margin:0 auto 28px;border-radius:16px;overflow:hidden;border:1px solid rgba(0,229,255,.12);background:rgba(3,7,20,.9)">
+    <canvas id="odk-torus-canvas" width="700" height="300" style="width:100%;display:block;max-width:100%"></canvas>
+  </div>
+  <style>
+    @keyframes flowLeft { 0% { x: 150; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { x: 350; opacity: 0; } }
+    @keyframes flowRight { 0% { x: 450; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { x: 650; opacity: 0; } }
+    .flow-left { animation: flowLeft 3s ease-in-out infinite; }
+    .flow-right { animation: flowRight 3s ease-in-out infinite; }
+  </style>
 
     <!-- BOTTOM: Code Generation Flow -->
     <!-- C# Source (Left) -->
@@ -1097,6 +1004,111 @@ window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+// ── ODK TORUS LAYER DIAGRAM ──
+(function(){
+  const canvas = document.getElementById('odk-torus-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W=700, H=300, cx=350, cy=150;
+  const R=100, r=48;
+  let angle=0;
+
+  function tubeCol(phi, bright){
+    const s = Math.sin(phi);
+    let c;
+    if(s > 0.65)       c=[155,90,255];   // violet  – Web5/STAR
+    else if(s > 0.2)   c=[60,180,255];   // blue    – transition
+    else if(s > -0.2)  c=[0,229,255];    // cyan    – Web4/OASIS
+    else if(s > -0.6)  c=[0,210,150];    // teal    – Web3/COSMIC ORM
+    else if(s > -0.82) c=[0,180,100];    // green   – Web3
+    else               c=[80,110,190];   // blue-gray – Web2/Web1
+    return `rgba(${c[0]},${c[1]},${c[2]},${bright.toFixed(2)})`;
+  }
+
+  function proj(x,y,z){ return { sx: cx+x, sy: cy - z - y*0.38 }; }
+
+  function render(){
+    ctx.clearRect(0,0,W,H);
+    const NT=80, NP=40;
+    const segs=[];
+
+    // Meridian circles
+    for(let i=0;i<NT;i+=4){
+      const t=angle+(i/NT)*Math.PI*2;
+      for(let j=0;j<NP;j++){
+        const p0=(j/NP)*Math.PI*2, p1=((j+1)/NP)*Math.PI*2;
+        const a={x:(R+r*Math.cos(p0))*Math.cos(t),y:(R+r*Math.cos(p0))*Math.sin(t),z:r*Math.sin(p0)};
+        const b={x:(R+r*Math.cos(p1))*Math.cos(t),y:(R+r*Math.cos(p1))*Math.sin(t),z:r*Math.sin(p1)};
+        segs.push({type:'wire',a,b,phi:(p0+p1)/2,depth:a.y+b.y});
+      }
+    }
+
+    // Latitude circles
+    for(let j=0;j<NP;j+=2){
+      const p=(j/NP)*Math.PI*2;
+      for(let i=0;i<NT;i++){
+        const t0=angle+(i/NT)*Math.PI*2, t1=angle+((i+1)/NT)*Math.PI*2;
+        const a={x:(R+r*Math.cos(p))*Math.cos(t0),y:(R+r*Math.cos(p))*Math.sin(t0),z:r*Math.sin(p)};
+        const b={x:(R+r*Math.cos(p))*Math.cos(t1),y:(R+r*Math.cos(p))*Math.sin(t1),z:r*Math.sin(p)};
+        segs.push({type:'wire',a,b,phi:p,depth:a.y+b.y});
+      }
+    }
+
+    // Arrow pulses
+    const AS=Math.PI*2/3, AP=Math.PI*2/3;
+    for(let i=0;i<3;i++){
+      for(let k=0;k<3;k++){
+        const theta=angle+i*AS;
+        const psi=((angle*1.5+i*AS+k*AP)%(Math.PI*2)+Math.PI*2)%(Math.PI*2);
+        const phi=-Math.PI/2-psi;
+        const rho=R+r*Math.cos(phi);
+        const x=rho*Math.cos(theta), y=rho*Math.sin(theta), z=r*Math.sin(phi);
+        const phi2=phi-0.22, rho2=R+r*Math.cos(phi2);
+        const x2=rho2*Math.cos(theta), y2=rho2*Math.sin(theta), z2=r*Math.sin(phi2);
+        segs.push({type:'arrow',x,y,z,x2,y2,z2,isRed:Math.sin(phi)<0,depth:y*2});
+      }
+    }
+
+    segs.sort((a,b)=>b.depth-a.depth);
+    const maxY=R+r;
+
+    for(const s of segs){
+      if(s.type==='arrow'){
+        const sp=proj(s.x,s.y,s.z), sp2=proj(s.x2,s.y2,s.z2);
+        const dx=sp2.sx-sp.sx, dy=sp2.sy-sp.sy;
+        const len=Math.sqrt(dx*dx+dy*dy); if(len<1) continue;
+        const nx=dx/len, ny=dy/len;
+        const [cr,cg,cb]=s.isRed?[230,45,45]:[155,90,255];
+        const fade=Math.max(0.28,Math.min(1,0.45+(-s.y+R)/(2*(R+r))));
+        ctx.save();
+        ctx.shadowColor=`rgb(${cr},${cg},${cb})`; ctx.shadowBlur=12;
+        ctx.beginPath();
+        ctx.moveTo(sp.sx+nx*12, sp.sy+ny*12);
+        ctx.lineTo(sp.sx-ny*6,  sp.sy+nx*6);
+        ctx.lineTo(sp.sx+ny*6,  sp.sy-nx*6);
+        ctx.closePath();
+        ctx.fillStyle=`rgba(${cr},${cg},${cb},${fade.toFixed(2)})`;
+        ctx.fill();
+        ctx.restore();
+      } else {
+        const t=1-(s.depth/2+maxY)/(2*maxY);
+        const bright=0.08+t*0.78;
+        const p0=proj(s.a.x,s.a.y,s.a.z), p1=proj(s.b.x,s.b.y,s.b.z);
+        ctx.beginPath();
+        ctx.moveTo(p0.sx,p0.sy); ctx.lineTo(p1.sx,p1.sy);
+        ctx.strokeStyle=tubeCol(s.phi,bright);
+        ctx.lineWidth=0.8;
+        ctx.stroke();
+      }
+    }
+
+    angle+=0.005;
+    requestAnimationFrame(render);
+  }
+
+  render();
+})();
 </script>
 </body>
 </html>
