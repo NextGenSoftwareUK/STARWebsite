@@ -255,41 +255,52 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
 
     <!-- BOTTOM: Code Generation Flow -->
     <!-- C# Source (Left) -->
-    <rect x="100" y="110" width="70" height="35" rx="5" fill="rgba(0,229,255,.1)" stroke="#00e5ff" stroke-width="2"/>
-    <text x="135" y="135" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="12" font-weight="600" fill="#00e5ff">C#</text>
-
-    <!-- Rust Target (Right) -->
-    <rect x="630" y="110" width="70" height="35" rx="5" fill="rgba(124,58,237,.1)" stroke="#7c3aed" stroke-width="2"/>
-    <text x="665" y="135" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="12" font-weight="600" fill="#7c3aed">RUST</text>
+    <rect x="80" y="105" width="80" height="40" rx="6" fill="rgba(0,229,255,.1)" stroke="#00e5ff" stroke-width="2"/>
+    <text x="120" y="135" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="13" font-weight="600" fill="#00e5ff">C#</text>
 
     <!-- STAR Engine (Center) -->
-    <circle cx="400" cy="127" r="18" fill="rgba(0,229,255,.12)" stroke="#00e5ff" stroke-width="2"/>
-    <text x="400" y="133" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" font-weight="600" fill="#00e5ff">STAR</text>
+    <circle cx="400" cy="125" r="20" fill="rgba(0,229,255,.12)" stroke="#00e5ff" stroke-width="2"/>
+    <text x="400" y="132" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" font-weight="600" fill="#00e5ff">STAR</text>
+
+    <!-- Output Languages (Right side - multiple) -->
+    <!-- Solidity (Ethereum) -->
+    <rect x="620" y="85" width="75" height="30" rx="5" fill="rgba(165,142,251,.1)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="657" y="107" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" font-weight="600" fill="#a78bfa">Solidity</text>
+    <text x="657" y="120" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="8" fill="#7a8ab0">Ethereum</text>
+
+    <!-- Rust (Holochain) -->
+    <rect x="620" y="125" width="75" height="30" rx="5" fill="rgba(124,58,237,.1)" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="657" y="147" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" font-weight="600" fill="#7c3aed">Rust</text>
+    <text x="657" y="160" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="8" fill="#7a8ab0">Holochain</text>
+
+    <!-- Python (MongoDB/Data) -->
+    <rect x="620" y="165" width="75" height="30" rx="5" fill="rgba(0,200,255,.1)" stroke="#00c8ff" stroke-width="1.5"/>
+    <text x="657" y="187" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" font-weight="600" fill="#00c8ff">Python</text>
+    <text x="657" y="200" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="8" fill="#7a8ab0">MongoDB</text>
 
     <!-- Data flow packets -->
     <g class="flow-left">
-      <circle cx="250" cy="127" r="4" fill="#00e5ff" filter="url(#glow)"/>
+      <circle cx="240" cy="125" r="4" fill="#00e5ff" filter="url(#glow)"/>
     </g>
-    <g class="flow-right" style="animation-delay: 0.3s">
-      <circle cx="550" cy="127" r="4" fill="#7c3aed" filter="url(#glow)"/>
+    <g class="flow-right" style="animation-delay: 0.2s">
+      <circle cx="550" cy="100" r="4" fill="#a78bfa" filter="url(#glow)"/>
     </g>
-    <g class="flow-left" style="animation-delay: 0.6s">
-      <circle cx="250" cy="127" r="4" fill="#00e5ff" filter="url(#glow)"/>
+    <g class="flow-right" style="animation-delay: 0.4s">
+      <circle cx="550" cy="125" r="4" fill="#7c3aed" filter="url(#glow)"/>
     </g>
-    <g class="flow-right" style="animation-delay: 0.9s">
-      <circle cx="550" cy="127" r="4" fill="#7c3aed" filter="url(#glow)"/>
+    <g class="flow-right" style="animation-delay: 0.6s">
+      <circle cx="550" cy="150" r="4" fill="#00c8ff" filter="url(#glow)"/>
+    </g>
+    <g class="flow-left" style="animation-delay: 0.8s">
+      <circle cx="240" cy="125" r="4" fill="#00e5ff" filter="url(#glow)"/>
     </g>
 
     <!-- Connecting lines -->
-    <line x1="170" y1="127" x2="382" y2="127" stroke="rgba(0,229,255,.2)" stroke-width="1" stroke-dasharray="4,4"/>
-    <line x1="418" y1="127" x2="630" y2="127" stroke="rgba(124,58,237,.2)" stroke-width="1" stroke-dasharray="4,4"/>
-
-    <!-- Provider labels -->
-    <text x="150" y="165" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#a8bfd8">Ethereum</text>
-    <text x="280" y="165" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#a8bfd8">MongoDB</text>
-    <text x="400" y="165" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#a8bfd8">40+ Providers</text>
-    <text x="520" y="165" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#a8bfd8">Holochain</text>
-    <text x="650" y="165" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#a8bfd8">Solana</text>
+    <line x1="160" y1="125" x2="380" y2="125" stroke="rgba(0,229,255,.2)" stroke-width="1" stroke-dasharray="4,4"/>
+    <!-- Output lines to different languages -->
+    <line x1="420" y1="125" x2="600" y2="100" stroke="rgba(165,142,251,.2)" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="420" y1="125" x2="600" y2="125" stroke="rgba(124,58,237,.2)" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="420" y1="125" x2="600" y2="150" stroke="rgba(0,200,255,.2)" stroke-width="1" stroke-dasharray="3,3"/>
   </svg>
   <p class="section-sub">The STAR ODK dynamically generates optimized code for every platform and provider you target — no vendor lock-in, no rebuilding. Write your business logic in C#, debug it instantly, and let STAR generate Rust for the data layer.</p>
   <div class="features-grid">
