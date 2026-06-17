@@ -239,22 +239,27 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
   <h2 class="section-title">STAR CLI: Publish & Manage</h2>
   <span class="section-line"></span>
   <p class="section-sub">The STAR CLI is your gateway to STARNET. Authenticate once with your OASIS Avatar, then create, publish, search and install OAPPs — all from the command line.</p>
-  <pre class="code-example"><span class="comment"># Authenticate with your OASIS Avatar
-</span><span class="keyword">$</span> <span class="cmd">star</span> avatar login
-<span class="success">✔ Signed in as Avatar @builder · karma 12,540
+  <pre class="code-example"><span class="comment"># Start your STAR session
+</span><span class="keyword">$</span> <span class="cmd">star</span> ignite
+<span class="success">✔ STAR ODK initialized and ready
 
-</span><span class="comment"># Create a new OAPP from a template
-</span><span class="keyword">$</span> <span class="cmd">star</span> oapp create <span class="str">"Quest Master"</span> --template quest
-<span class="success">✔ Created ./QuestMaster from template quest@2.1.0
+</span><span class="comment"># Create a new OAPP using the interactive wizard
+</span><span class="keyword">$</span> <span class="cmd">star</span> wiz
+<span class="success">✔ OAPP wizard started...
+  Name: Quest Master
+  Type: oapp
+  Created ./QuestMaster
 
-</span><span class="comment"># Publish to STARNET — versioned, signed &amp; replicated
+</span><span class="comment"># Publish your OAPP to STARNET — versioned &amp; signed
 </span><span class="keyword">$</span> <span class="cmd">star</span> oapp publish ./QuestMaster
-<span class="success">✔ Published QuestMaster@1.0.0 to STARNET
-  ↳ Stored across 5 HyperDrive providers
+<span class="success">✔ Published Quest Master to STARNET
+  ↳ Holon signed &amp; replicated across providers
+  ↳ Available across the Omniverse
 
-</span><span class="comment"># Now discoverable across the entire Omniverse...
-</span><span class="keyword">$</span> <span class="cmd">star</span> search <span class="str">"quest"</span>
-  QuestMaster@1.0.0   ★4.8   34.2k installs</span></pre>
+</span><span class="comment"># Search and install OAPPs from other developers
+</span><span class="keyword">$</span> <span class="cmd">star</span> oapp search <span class="str">"quest"</span>
+  Quest Master@1.0.0   ★4.8   12.4k installs
+  Epic Quests@2.1.0    ★4.9   45.2k installs</span></pre>
   <div class="features-grid" style="margin-top:40px">
     <div class="feature-item">
       <span class="feature-icon">👤</span>
