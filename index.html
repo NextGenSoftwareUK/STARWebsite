@@ -239,27 +239,34 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
   <h2 class="section-title">STAR CLI: Publish & Manage</h2>
   <span class="section-line"></span>
   <p class="section-sub">The STAR CLI is your gateway to STARNET. Authenticate once with your OASIS Avatar, then create, publish, search and install OAPPs — all from the command line.</p>
-  <pre class="code-example"><span class="comment"># Start your STAR session
+  <pre class="code-example"><span class="comment"># Start your STAR session - ignites the STAR
 </span><span class="keyword">$</span> <span class="cmd">star</span> ignite
-<span class="success">✔ STAR ODK initialized and ready
+<span class="success">STAR Ignited Successfully!
 
 </span><span class="comment"># Create a new OAPP using the interactive wizard
 </span><span class="keyword">$</span> <span class="cmd">star</span> wiz
-<span class="success">✔ OAPP wizard started...
+<span class="comment">Welcome to the OASIS Omniverse/MagicVerse Light Wizard!
+This wizard will allow you create an OAPP...
+</span><span class="success">✔ OAPP created: ./QuestMaster/OAPPDNA.json
+  Folder: ./QuestMaster
   Name: Quest Master
-  Type: oapp
-  Created ./QuestMaster
+  Type: OAPP
 
-</span><span class="comment"># Publish your OAPP to STARNET — versioned &amp; signed
+</span><span class="comment"># Publish your OAPP - converts folder to .oapp file
 </span><span class="keyword">$</span> <span class="cmd">star</span> oapp publish ./QuestMaster
 <span class="success">✔ Published Quest Master to STARNET
-  ↳ Holon signed &amp; replicated across providers
-  ↳ Available across the Omniverse
+  ✔ Generated Quest Master.oapp file
+  ✔ Signed with Avatar @builder
+  ✔ Replicated across providers
+  ✔ Available in STARNET and across the Omniverse
 
-</span><span class="comment"># Search and install OAPPs from other developers
+</span><span class="comment"># Search and discover OAPPs from other developers
 </span><span class="keyword">$</span> <span class="cmd">star</span> oapp search <span class="str">"quest"</span>
-  Quest Master@1.0.0   ★4.8   12.4k installs
-  Epic Quests@2.1.0    ★4.9   45.2k installs</span></pre>
+<span class="success">Searching STARNET for 'quest'...
+  [1] Quest Master@1.0.0 by @builder
+      Rating: ★4.8 | Installs: 12.4k
+  [2] Epic Quests@2.1.0 by @adventurer
+      Rating: ★4.9 | Installs: 45.2k</span></span></pre>
   <div class="features-grid" style="margin-top:40px">
     <div class="feature-item">
       <span class="feature-icon">👤</span>
