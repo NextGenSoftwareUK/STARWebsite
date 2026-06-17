@@ -239,24 +239,22 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
   <h2 class="section-title">STAR CLI: Publish & Manage</h2>
   <span class="section-line"></span>
   <p class="section-sub">The STAR CLI is your gateway to STARNET. Authenticate once with your OASIS Avatar, then create, publish, search and install OAPPs — all from the command line.</p>
-  <div class="code-example">
-<span class="comment"># Authenticate with your OASIS Avatar</span>
-<span class="keyword">$</span> star avatar login
-<span class="success">✔ Signed in as Avatar @builder · karma 12,540</span>
+  <pre class="code-example"><span class="comment"># Authenticate with your OASIS Avatar
+</span><span class="keyword">$</span> <span class="cmd">star</span> avatar login
+<span class="success">✔ Signed in as Avatar @builder · karma 12,540
 
-<span class="comment"># Create a new OAPP from a template</span>
-<span class="keyword">$</span> star oapp create "Quest Master" --template quest
-<span class="success">✔ Created ./QuestMaster from template quest@2.1.0</span>
+</span><span class="comment"># Create a new OAPP from a template
+</span><span class="keyword">$</span> <span class="cmd">star</span> oapp create <span class="str">"Quest Master"</span> --template quest
+<span class="success">✔ Created ./QuestMaster from template quest@2.1.0
 
-<span class="comment"># Publish to STARNET — versioned, signed &amp; replicated</span>
-<span class="keyword">$</span> star oapp publish ./QuestMaster
-<span class="success">✔ Published QuestMaster@1.0.0 to STARNET</span>
-<span class="success">  ↳ Stored across 5 HyperDrive providers</span>
+</span><span class="comment"># Publish to STARNET — versioned, signed &amp; replicated
+</span><span class="keyword">$</span> <span class="cmd">star</span> oapp publish ./QuestMaster
+<span class="success">✔ Published QuestMaster@1.0.0 to STARNET
+  ↳ Stored across 5 HyperDrive providers
 
-<span class="comment"># Now discoverable across the entire Omniverse...</span>
-<span class="keyword">$</span> star search "quest"
-  QuestMaster@1.0.0   ★4.8   34.2k installs
-  </div>
+</span><span class="comment"># Now discoverable across the entire Omniverse...
+</span><span class="keyword">$</span> <span class="cmd">star</span> search <span class="str">"quest"</span>
+  QuestMaster@1.0.0   ★4.8   34.2k installs</span></pre>
   <div class="features-grid" style="margin-top:40px">
     <div class="feature-item">
       <span class="feature-icon">👤</span>
