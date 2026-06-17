@@ -117,6 +117,12 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
   .section{padding:60px 15px}
   .features-grid{grid-template-columns:1fr}
 }
+/* ── OMNIVERSE HIERARCHY CANVAS ── */
+.star-omni-wrap{border-radius:12px;overflow:hidden;border:1px solid rgba(139,92,246,.22);background:#030714;box-shadow:0 0 60px rgba(139,92,246,.1);margin:1.5rem auto 0;max-width:860px;display:block}
+#star-omni-canvas{display:block;width:100%}
+.omni-legend{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;justify-content:center;margin:1rem 0 0;padding:0 .5rem}
+.omni-li{display:flex;align-items:center;gap:.45rem;font-family:'Share Tech Mono',monospace;font-size:.72rem;color:#a8bfd8;letter-spacing:.06em;white-space:nowrap}
+.omni-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 </style>
 </head>
 <body>
@@ -207,7 +213,22 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
   <div class="section-kicker">DEVELOPMENT KIT</div>
   <h2 class="section-title">STAR ODK: Build Once, Deploy Everywhere</h2>
   <span class="section-line"></span>
-  <svg class="hero-bg" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <div class="star-omni-wrap">
+    <canvas id="star-omni-canvas"></canvas>
+  </div>
+  <div class="omni-legend">
+    <div class="omni-li"><div class="omni-dot" style="background:#FFD700"></div>GREAT GRAND SUPER STAR (OMNIVERSE)</div>
+    <div class="omni-li"><div class="omni-dot" style="background:#FF8C00"></div>GRAND SUPER STAR (UNIVERSE)</div>
+    <div class="omni-li"><div class="omni-dot" style="background:#FFB040"></div>SUPER STAR (GALAXY)</div>
+    <div class="omni-li"><div class="omni-dot" style="background:#FFE566"></div>STAR (SOLAR SYSTEM)</div>
+    <div class="omni-li"><div class="omni-dot" style="background:#4FC3F7"></div>PLANET</div>
+    <div class="omni-li"><div class="omni-dot" style="background:#B0C8D4"></div>MOON</div>
+    <div class="omni-li"><div class="omni-dot" style="background:#00E5FF"></div>ZOME</div>
+    <div class="omni-li"><div class="omni-dot" style="background:#A78BFA"></div>HOLON</div>
+  </div>
+
+  <!-- BOTTOM: Code Generation Flow -->
+  <svg class="hero-bg" viewBox="0 0 750 230" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="margin-top:2rem">
     <defs>
       <style>
         @keyframes flowLeft { 0% { x: 150; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { x: 350; opacity: 0; } }
@@ -215,134 +236,48 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
         .flow-left { animation: flowLeft 3s ease-in-out infinite; }
         .flow-right { animation: flowRight 3s ease-in-out infinite; }
       </style>
-      <filter id="glow"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      <radialGradient id="rg1" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".18"/>
-        <stop offset="100%" stop-color="#050314" stop-opacity="0"/>
-      </radialGradient>
-      <filter id="glow-v"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      <filter id="glow-sm"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      <!-- holon hexagon -->
-      <g id="hx2">
-        <polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6" fill="rgba(139,92,246,.12)" stroke="#a78bfa" stroke-width="1"/>
-        <circle cx="0" cy="0" r="2.5" fill="#a78bfa"/>
-      </g>
-      <g id="hxc2">
-        <polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6" fill="rgba(0,229,255,.1)" stroke="#00e5ff" stroke-width="1"/>
-        <circle cx="0" cy="0" r="2.5" fill="#00e5ff"/>
-      </g>
+      <filter id="glow-cg"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     </defs>
 
-    <ellipse cx="400" cy="60" rx="180" ry="125" fill="url(#rg1)"/>
-
-    <!-- faint constellation lines -->
-    <g opacity=".15" stroke="#8b5cf6" stroke-width="0.8">
-      <line x1="400" y1="60" x2="400" y2="5"/>
-      <line x1="400" y1="60" x2="262" y2="15"/>
-      <line x1="400" y1="60" x2="538" y2="15"/>
-      <line x1="400" y1="60" x2="175" y2="85"/>
-      <line x1="400" y1="60" x2="625" y2="85"/>
-      <line x1="400" y1="60" x2="400" y2="115"/>
-    </g>
-
-    <!-- Outer orbit ring (slow) -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="0 400 60" to="360 400 60" dur="64s" repeatCount="indefinite"/>
-      <ellipse cx="400" cy="60" rx="235" ry="145" fill="none" stroke="rgba(139,92,246,.12)" stroke-width="0.8" stroke-dasharray="5,6"/>
-      <use href="#hx2" x="625" y="85"/>
-      <use href="#hxc2" x="400" y="115"/>
-      <use href="#hx2" x="175" y="85"/>
-      <use href="#hx2" x="262" y="15"/>
-      <use href="#hxc2" x="538" y="15"/>
-    </g>
-
-    <!-- Mid orbit ring (reverse) -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="360 400 60" to="0 400 60" dur="46s" repeatCount="indefinite"/>
-      <ellipse cx="400" cy="60" rx="170" ry="107" fill="none" stroke="rgba(139,92,246,.13)" stroke-width="0.8" stroke-dasharray="4,5"/>
-      <use href="#hx2" x="520" y="100"/>
-      <use href="#hxc2" x="280" y="100"/>
-      <use href="#hx2" x="280" y="20"/>
-      <use href="#hx2" x="520" y="20"/>
-    </g>
-
-    <!-- Inner orbit ring -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="0 400 60" to="360 400 60" dur="34s" repeatCount="indefinite"/>
-      <ellipse cx="400" cy="60" rx="115" ry="75" fill="none" stroke="rgba(139,92,246,.14)" stroke-width="0.8" stroke-dasharray="3,4"/>
-      <use href="#hx2" x="465" y="85"/>
-      <use href="#hxc2" x="335" y="85"/>
-      <use href="#hx2" x="400" y="15"/>
-    </g>
-
-    <!-- data pulses -->
-    <circle r="3" fill="#a78bfa" opacity=".9" filter="url(#glow-sm)">
-      <animateMotion dur="3s" repeatCount="indefinite" path="M400,60 L262,15"/>
-    </circle>
-    <circle r="3" fill="#00e5ff" opacity=".9" filter="url(#glow-sm)">
-      <animateMotion dur="2.6s" repeatCount="indefinite" path="M625,85 L400,60"/>
-    </circle>
-    <circle r="3" fill="#a78bfa" opacity=".9" filter="url(#glow-sm)">
-      <animateMotion dur="3.4s" repeatCount="indefinite" path="M400,60 L175,85"/>
-    </circle>
-
-    <!-- Center core -->
-    <ellipse cx="400" cy="60" rx="46" ry="31" fill="none" stroke="rgba(139,92,246,.1)" stroke-width="0.8" stroke-dasharray="5,3">
-      <animateTransform attributeName="transform" type="rotate" from="0 400 60" to="360 400 60" dur="20s" repeatCount="indefinite"/>
-    </ellipse>
-    <circle cx="400" cy="60" r="8.5" fill="rgba(139,92,246,.2)" stroke="#8b5cf6" stroke-width="1" filter="url(#glow-v)">
-      <animate attributeName="r" values="8.5;10.5;8.5" dur="3s" repeatCount="indefinite"/>
-    </circle>
-  </svg>
-
-    <!-- BOTTOM: Code Generation Flow -->
     <!-- C# Source (Left) -->
     <rect x="80" y="105" width="80" height="40" rx="6" fill="rgba(0,229,255,.1)" stroke="#00e5ff" stroke-width="2"/>
     <text x="120" y="135" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="13" font-weight="600" fill="#00e5ff">C#</text>
 
     <!-- STAR Engine (Center) -->
-    <circle cx="400" cy="125" r="20" fill="rgba(0,229,255,.12)" stroke="#00e5ff" stroke-width="2"/>
-    <text x="400" y="132" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" font-weight="600" fill="#00e5ff">STAR</text>
+    <circle cx="370" cy="125" r="20" fill="rgba(0,229,255,.12)" stroke="#00e5ff" stroke-width="2"/>
+    <text x="370" y="132" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" font-weight="600" fill="#00e5ff">STAR</text>
 
     <!-- Output Languages (Right side - multiple) -->
-    <!-- Solidity (Ethereum) -->
-    <rect x="620" y="85" width="75" height="30" rx="5" fill="rgba(165,142,251,.1)" stroke="#a78bfa" stroke-width="1.5"/>
-    <text x="657" y="107" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" font-weight="600" fill="#a78bfa">Solidity</text>
-    <text x="657" y="120" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="8" fill="#7a8ab0">Ethereum</text>
+    <rect x="580" y="55" width="90" height="30" rx="5" fill="rgba(165,142,251,.1)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="625" y="74" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" font-weight="600" fill="#a78bfa">Solidity</text>
+    <text x="625" y="87" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="8" fill="#7a8ab0">Ethereum</text>
 
-    <!-- Rust (Holochain) -->
-    <rect x="620" y="125" width="75" height="30" rx="5" fill="rgba(124,58,237,.1)" stroke="#7c3aed" stroke-width="1.5"/>
-    <text x="657" y="147" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" font-weight="600" fill="#7c3aed">Rust</text>
-    <text x="657" y="160" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="8" fill="#7a8ab0">Holochain</text>
+    <rect x="580" y="100" width="90" height="30" rx="5" fill="rgba(124,58,237,.1)" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="625" y="119" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" font-weight="600" fill="#7c3aed">Rust</text>
+    <text x="625" y="132" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="8" fill="#7a8ab0">Holochain</text>
 
-    <!-- Python (MongoDB/Data) -->
-    <rect x="620" y="165" width="75" height="30" rx="5" fill="rgba(0,200,255,.1)" stroke="#00c8ff" stroke-width="1.5"/>
-    <text x="657" y="187" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" font-weight="600" fill="#00c8ff">Python</text>
-    <text x="657" y="200" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="8" fill="#7a8ab0">MongoDB</text>
+    <rect x="580" y="145" width="90" height="30" rx="5" fill="rgba(0,200,255,.1)" stroke="#00c8ff" stroke-width="1.5"/>
+    <text x="625" y="164" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" font-weight="600" fill="#00c8ff">Python</text>
+    <text x="625" y="177" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="8" fill="#7a8ab0">MongoDB</text>
+
+    <rect x="580" y="190" width="90" height="30" rx="5" fill="rgba(0,229,130,.1)" stroke="#00e582" stroke-width="1.5"/>
+    <text x="625" y="209" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" font-weight="600" fill="#00e582">Go / SQL</text>
+    <text x="625" y="222" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="8" fill="#7a8ab0">Neo4j / SQLite</text>
 
     <!-- Data flow packets -->
-    <g class="flow-left">
-      <circle cx="240" cy="125" r="4" fill="#00e5ff" filter="url(#glow)"/>
-    </g>
-    <g class="flow-right" style="animation-delay: 0.2s">
-      <circle cx="550" cy="100" r="4" fill="#a78bfa" filter="url(#glow)"/>
-    </g>
-    <g class="flow-right" style="animation-delay: 0.4s">
-      <circle cx="550" cy="125" r="4" fill="#7c3aed" filter="url(#glow)"/>
-    </g>
-    <g class="flow-right" style="animation-delay: 0.6s">
-      <circle cx="550" cy="150" r="4" fill="#00c8ff" filter="url(#glow)"/>
-    </g>
-    <g class="flow-left" style="animation-delay: 0.8s">
-      <circle cx="240" cy="125" r="4" fill="#00e5ff" filter="url(#glow)"/>
-    </g>
+    <g class="flow-left"><circle cx="240" cy="125" r="4" fill="#00e5ff" filter="url(#glow-cg)"/></g>
+    <g class="flow-right" style="animation-delay:0.2s"><circle cx="510" cy="70" r="4" fill="#a78bfa" filter="url(#glow-cg)"/></g>
+    <g class="flow-right" style="animation-delay:0.4s"><circle cx="510" cy="115" r="4" fill="#7c3aed" filter="url(#glow-cg)"/></g>
+    <g class="flow-right" style="animation-delay:0.6s"><circle cx="510" cy="160" r="4" fill="#00c8ff" filter="url(#glow-cg)"/></g>
+    <g class="flow-right" style="animation-delay:0.8s"><circle cx="510" cy="205" r="4" fill="#00e582" filter="url(#glow-cg)"/></g>
+    <g class="flow-left" style="animation-delay:1.0s"><circle cx="240" cy="125" r="4" fill="#00e5ff" filter="url(#glow-cg)"/></g>
 
     <!-- Connecting lines -->
-    <line x1="160" y1="125" x2="380" y2="125" stroke="rgba(0,229,255,.2)" stroke-width="1" stroke-dasharray="4,4"/>
-    <!-- Output lines to different languages -->
-    <line x1="420" y1="125" x2="600" y2="100" stroke="rgba(165,142,251,.2)" stroke-width="1" stroke-dasharray="3,3"/>
-    <line x1="420" y1="125" x2="600" y2="125" stroke="rgba(124,58,237,.2)" stroke-width="1" stroke-dasharray="3,3"/>
-    <line x1="420" y1="125" x2="600" y2="150" stroke="rgba(0,200,255,.2)" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="160" y1="125" x2="350" y2="125" stroke="rgba(0,229,255,.2)" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="390" y1="125" x2="560" y2="70" stroke="rgba(165,142,251,.2)" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="390" y1="125" x2="560" y2="115" stroke="rgba(124,58,237,.2)" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="390" y1="125" x2="560" y2="160" stroke="rgba(0,200,255,.2)" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="390" y1="125" x2="560" y2="205" stroke="rgba(0,229,130,.2)" stroke-width="1" stroke-dasharray="3,3"/>
   </svg>
   <p class="section-sub">The STAR ODK dynamically generates optimized code for every platform and provider you target — no vendor lock-in, no rebuilding. Write your business logic in C#, debug it instantly, and let STAR generate Rust for the data layer.</p>
   <div class="features-grid">
@@ -1082,6 +1017,178 @@ window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+// ── OASIS OMNIVERSE HIERARCHY CANVAS (STAR ODK section) ──
+(function(){
+  var cv=document.getElementById('star-omni-canvas');
+  if(!cv)return;
+  var ctx=cv.getContext('2d');
+  var W,H,cx,cy;
+  var TILT=0.58, t=0, animId;
+
+  var P={
+    RU:0.72,  RG:0.210, RS:0.148, RP:0.085, RM:0.040,
+    bG:0.068, bU:0.036, bS:0.034, bSt:0.026, bPl:0.018, bMn:0.011,
+    zRG:0.108,zRU:0.058,zRS:0.055,zRSt:0.046,zRPl:0.036,zRMn:0.024,
+    zBG:0.0080,zBU:0.0065,zBS:0.0058,zBSt:0.0054,zBPl:0.0048,zBMn:0.0042,
+    hRG:0.022,hRU:0.018,hRS:0.017,hRSt:0.016,hRPl:0.013,hRMn:0.011,
+    hB:0.004
+  };
+
+  function resize(){
+    if(animId) cancelAnimationFrame(animId);
+    W=cv.parentElement.clientWidth||1200;
+    H=Math.round(W*0.74);
+    cv.width=W; cv.height=H;
+    cx=W/2; cy=H/2;
+    animId=requestAnimationFrame(render);
+  }
+
+  function pr(x,y){ return [cx+x, cy+y*TILT]; }
+
+  function ring(ox,oy,r,col,lw){
+    var c=pr(ox,oy);
+    ctx.beginPath();
+    ctx.ellipse(c[0],c[1],r,r*TILT,0,0,Math.PI*2);
+    ctx.strokeStyle=col; ctx.lineWidth=lw;
+    var d=Math.max(2,r*0.016); ctx.setLineDash([d,d*1.5]); ctx.stroke(); ctx.setLineDash([]);
+  }
+
+  function glow(x,y,r,col){
+    var c=pr(x,y);
+    var g=ctx.createRadialGradient(c[0],c[1],0,c[0],c[1],r);
+    g.addColorStop(0,col); g.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.beginPath(); ctx.arc(c[0],c[1],r,0,Math.PI*2);
+    ctx.fillStyle=g; ctx.fill();
+  }
+
+  function dot(x,y,r,col){
+    var c=pr(x,y);
+    ctx.beginPath(); ctx.arc(c[0],c[1],r,0,Math.PI*2);
+    ctx.fillStyle=col; ctx.fill();
+  }
+
+  function lbl(x,y,abv,lines,col,sz){
+    var c=pr(x,y); var lh=sz*1.35;
+    ctx.textAlign='center';
+    if(!Array.isArray(lines)) lines=[lines];
+    lines.forEach(function(l,i,a){
+      ctx.fillStyle=col+'cc';
+      ctx.font='700 '+sz+'px Orbitron,sans-serif';
+      ctx.fillText(l, c[0], c[1]-abv-(a.length-1-i)*lh);
+    });
+  }
+
+  function at(ox,oy,r,a){ return [ox+r*Math.cos(a), oy+r*Math.sin(a)]; }
+
+  function zh(ox,oy,zR,zBr,zSp,hR,hBr,n){
+    for(var i=0;i<n;i++){
+      var za=t*zSp+i*(Math.PI*2/n);
+      var zp=at(ox,oy,zR,za);
+      for(var h=0;h<2;h++){
+        var ha=t*0.027+h*Math.PI+za*2.3;
+        var hp=at(zp[0],zp[1],hR,ha);
+        dot(hp[0],hp[1],hBr,'#A78BFA');
+      }
+      dot(zp[0],zp[1],zBr,'#00E5FF');
+    }
+  }
+
+  function render(){
+    ctx.clearRect(0,0,W,H);
+
+    var RU=cx*P.RU, RG=cx*P.RG, RS=cx*P.RS, RP=cx*P.RP, RM=cx*P.RM;
+    var bG=cx*P.bG, bU=cx*P.bU, bS=cx*P.bS, bSt=cx*P.bSt, bPl=cx*P.bPl, bMn=cx*P.bMn;
+    var hb=cx*P.hB;
+    var lw1=cx*0.003, lw2=cx*0.0022, lw3=cx*0.0025, lw4=cx*0.0022, lw5=cx*0.0018;
+    var fsH=Math.round(cx*0.015), fsG=Math.round(cx*0.020), fsU=Math.round(cx*0.024), fsLg=Math.round(cx*0.028);
+
+    glow(0,0,RU*0.86,'rgba(255,210,0,0.03)');
+    glow(0,0,RU*0.43,'rgba(139,92,246,0.04)');
+
+    ctx.fillStyle='rgba(139,92,246,0.26)';
+    ctx.font='700 '+Math.round(cx*0.015)+'px "Share Tech Mono",monospace';
+    ctx.textAlign='left';
+    ctx.fillText('OASIS OMNIVERSE — FULL HIERARCHY', cx*0.04, cy*0.09);
+
+    ring(0,0, RU, 'rgba(255,215,0,0.18)', lw1);
+
+    for(var gi=0;gi<2;gi++){
+      var ga=gi*Math.PI + t*0.00042;
+      var gp=at(0,0, RU, ga);
+      var gx=gp[0], gy=gp[1];
+
+      ring(gx,gy, RG, 'rgba(255,140,0,0.18)', lw2);
+      zh(gx,gy, cx*P.zRU,cx*P.zBU, 0.0040, cx*P.hRU,hb, 2);
+
+      for(var si=0;si<2;si++){
+        var sa=si*Math.PI + gi*0.62 + t*0.00122;
+        var sp=at(gx,gy, RG, sa);
+        var sx=sp[0], sy=sp[1];
+
+        ring(sx,sy, RS, 'rgba(255,165,0,0.32)', lw3);
+        zh(sx,sy, cx*P.zRS,cx*P.zBS, 0.0070, cx*P.hRS,hb, 2);
+
+        var sta=si*1.8+gi*2.4+t*0.00300;
+        var stp=at(sx,sy, RS, sta);
+        var stx=stp[0], sty=stp[1];
+
+        ring(stx,sty, RP, 'rgba(255,229,102,0.32)', lw4);
+        zh(stx,sty, cx*P.zRSt,cx*P.zBSt, 0.0122, cx*P.hRSt,hb, 2);
+
+        for(var pi=0;pi<2;pi++){
+          var pla=pi*Math.PI+si*0.88+t*0.00700;
+          var plp=at(stx,sty, RP, pla);
+          var plx=plp[0], ply=plp[1];
+
+          ring(plx,ply, RM, 'rgba(79,195,247,0.42)', lw5);
+          zh(plx,ply, cx*P.zRPl,cx*P.zBPl, 0.0200, cx*P.hRPl,hb, 2);
+
+          var mna=pi*2.2+si*1.4+t*0.01800;
+          var mnp=at(plx,ply, RM, mna);
+          var mnx=mnp[0], mny=mnp[1];
+
+          zh(mnx,mny, cx*P.zRMn,cx*P.zBMn, 0.0330, cx*P.hRMn,hb, 1);
+
+          glow(mnx,mny, bMn*3.8,'rgba(176,200,212,0.42)');
+          dot(mnx,mny, bMn,'#B0C8D4');
+
+          glow(plx,ply, bPl*4.0,'rgba(79,195,247,0.42)');
+          dot(plx,ply, bPl,'#4FC3F7');
+        }
+
+        glow(stx,sty, bSt*5.0,'rgba(255,229,102,0.48)');
+        dot(stx,sty, bSt,'#FFE566');
+        lbl(stx,sty, bSt+cx*0.008,'STAR','#FFE566',Math.round(cx*0.016));
+
+        glow(sx,sy, bS*3.2,'rgba(255,176,64,0.34)');
+        dot(sx,sy, bS,'#FFB040');
+        lbl(sx,sy, bS+cx*0.012,'GALAXY','#FFB040',fsG);
+      }
+
+      glow(gx,gy, bU*3.2,'rgba(255,140,0,0.40)');
+      dot(gx,gy, bU,'#FF8C00');
+      lbl(gx,gy, bU+cx*0.016,'UNIVERSE','#FF8C00',fsU);
+    }
+
+    zh(0,0, cx*P.zRG,cx*P.zBG, 0.0028, cx*P.hRG,hb, 3);
+
+    var gr=bG*(1+0.08*Math.sin(t*0.045));
+    glow(0,0,gr*2.8,'rgba(255,215,0,0.55)');
+    glow(0,0,gr*1.5,'rgba(255,235,100,0.45)');
+    dot(0,0,gr,'#FFD700');
+    lbl(0,0,gr+cx*0.022,['GREAT GRAND SUPER STAR','OMNIVERSE CORE'],'#FFD700',fsLg);
+
+    t++;
+    animId=requestAnimationFrame(render);
+  }
+
+  window.addEventListener('resize',function(){
+    clearTimeout(window._starOmniRT);
+    window._starOmniRT=setTimeout(resize,150);
+  });
+  resize();
+})();
 </script>
 </body>
 </html>
