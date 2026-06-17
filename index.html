@@ -39,6 +39,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(3,7,20,.88);
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spinCW{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes spinCCW{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+@keyframes pulse{0%,100%{opacity:1;r:4}50%{opacity:.6;r:5}}
 @keyframes titleGlow{0%,100%{filter:drop-shadow(0 0 18px rgba(0,229,255,.5)) drop-shadow(0 0 40px rgba(0,229,255,.2))}50%{filter:drop-shadow(0 0 35px rgba(0,229,255,.9)) drop-shadow(0 0 80px rgba(0,229,255,.4)) drop-shadow(0 0 120px rgba(0,229,255,.15))}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
@@ -133,10 +136,10 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
 <nav>
   <a class="nav-logo" href="/">
     <svg class="nav-logo-icon" viewBox="0 0 60 60" fill="none">
-      <circle cx="30" cy="30" r="4" fill="#fff"/>
-      <circle cx="30" cy="30" r="14" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
-      <circle cx="30" cy="30" r="24" stroke="#00e5ff" stroke-width="2"/>
-      <g><circle cx="30" cy="6" r="2.5" fill="#00e5ff"/></g>
+      <circle cx="30" cy="30" r="4" fill="#fff" style="animation:pulse 2.5s ease-in-out infinite;transform-origin:30px 30px"/>
+      <circle cx="30" cy="30" r="14" stroke="rgba(255,255,255,.4)" stroke-width="1.5" style="animation:spinCCW 5s linear infinite;transform-origin:30px 30px"/>
+      <circle cx="30" cy="30" r="24" stroke="#00e5ff" stroke-width="2" style="animation:spinCW 8s linear infinite;transform-origin:30px 30px"/>
+      <g style="animation:spinCW 3s linear infinite;transform-origin:30px 30px"><circle cx="30" cy="6" r="2.5" fill="#00e5ff"/></g>
     </svg>
     STAR <span>DEVELOPER HUB</span>
   </a>
