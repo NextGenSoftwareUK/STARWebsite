@@ -207,47 +207,65 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
   <div class="section-kicker">DEVELOPMENT KIT</div>
   <h2 class="section-title">STAR ODK: Build Once, Deploy Everywhere</h2>
   <span class="section-line"></span>
-  <svg class="hero-bg" viewBox="0 0 800 120" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <svg class="hero-bg" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <style>
-        @keyframes flowLeft { 0% { x: 150; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { x: 350; opacity: 0; } }
-        @keyframes flowRight { 0% { x: 450; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { x: 650; opacity: 0; } }
-        .flow-left { animation: flowLeft 3s ease-in-out infinite; }
-        .flow-right { animation: flowRight 3s ease-in-out infinite; }
+        @keyframes starPulse { 0%,100% { r: 32; } 50% { r: 38; } }
+        @keyframes coronaPulse { 0%,100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+        @keyframes energyFlare { 0%,100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.15); } }
+        .star-core { animation: starPulse 2.5s ease-in-out infinite; }
+        .corona { animation: coronaPulse 2.5s ease-in-out infinite; }
+        .flare { animation: energyFlare 2.5s ease-in-out infinite; }
       </style>
-      <filter id="glow2"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="starGlow">
+        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <radialGradient id="starGradient" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="50%" stop-color="#00e5ff"/>
+        <stop offset="100%" stop-color="#0066cc"/>
+      </radialGradient>
     </defs>
-    <!-- C# Source (Left) -->
-    <rect x="80" y="40" width="80" height="40" rx="6" fill="rgba(0,229,255,.1)" stroke="#00e5ff" stroke-width="2"/>
-    <text x="120" y="67" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="13" font-weight="600" fill="#00e5ff">C#</text>
-    <!-- Rust Target (Right) -->
-    <rect x="640" y="40" width="80" height="40" rx="6" fill="rgba(124,58,237,.1)" stroke="#7c3aed" stroke-width="2"/>
-    <text x="680" y="67" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="13" font-weight="600" fill="#7c3aed">RUST</text>
-    <!-- STAR Engine (Center) -->
-    <circle cx="400" cy="60" r="22" fill="rgba(0,229,255,.12)" stroke="#00e5ff" stroke-width="2"/>
-    <text x="400" y="68" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" font-weight="600" fill="#00e5ff">STAR</text>
-    <!-- Flow arrows and data packets -->
-    <g class="flow-left">
-      <circle cx="250" cy="60" r="5" fill="#00e5ff" filter="url(#glow2)"/>
+
+    <!-- Outer energy corona rings -->
+    <circle cx="400" cy="100" r="55" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.2" class="corona"/>
+    <circle cx="400" cy="100" r="45" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.25" class="corona" style="animation-delay: 0.3s"/>
+
+    <!-- Energy flares radiating outward -->
+    <g class="flare" style="transform-origin: 400px 100px">
+      <path d="M 400 30 Q 410 60 400 80 Q 390 60 400 30" fill="rgba(0,229,255,0.5)" filter="url(#starGlow)"/>
     </g>
-    <g class="flow-right" style="animation-delay: 0.3s">
-      <circle cx="550" cy="60" r="5" fill="#7c3aed" filter="url(#glow2)"/>
+    <g class="flare" style="transform-origin: 400px 100px; animation-delay: 0.2s">
+      <path d="M 470 100 Q 440 115 420 110 Q 445 105 470 100" fill="rgba(0,229,255,0.5)" filter="url(#starGlow)"/>
     </g>
-    <g class="flow-left" style="animation-delay: 0.6s">
-      <circle cx="250" cy="60" r="5" fill="#00e5ff" filter="url(#glow2)"/>
+    <g class="flare" style="transform-origin: 400px 100px; animation-delay: 0.4s">
+      <path d="M 400 170 Q 410 140 400 120 Q 390 140 400 170" fill="rgba(0,229,255,0.5)" filter="url(#starGlow)"/>
     </g>
-    <g class="flow-right" style="animation-delay: 0.9s">
-      <circle cx="550" cy="60" r="5" fill="#7c3aed" filter="url(#glow2)"/>
+    <g class="flare" style="transform-origin: 400px 100px; animation-delay: 0.6s">
+      <path d="M 330 100 Q 360 85 380 90 Q 355 95 330 100" fill="rgba(0,229,255,0.5)" filter="url(#starGlow)"/>
     </g>
-    <!-- Connecting lines -->
-    <line x1="160" y1="60" x2="378" y2="60" stroke="rgba(0,229,255,.2)" stroke-width="1" stroke-dasharray="4,4"/>
-    <line x1="422" y1="60" x2="640" y2="60" stroke="rgba(124,58,237,.2)" stroke-width="1" stroke-dasharray="4,4"/>
-    <!-- Provider icons below -->
-    <text x="150" y="110" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" fill="#a8bfd8">Ethereum</text>
-    <text x="280" y="110" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" fill="#a8bfd8">MongoDB</text>
-    <text x="400" y="110" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" fill="#a8bfd8">40+ Providers</text>
-    <text x="520" y="110" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" fill="#a8bfd8">Holochain</text>
-    <text x="650" y="110" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" fill="#a8bfd8">Solana</text>
+
+    <!-- Diagonal energy flares -->
+    <g class="flare" style="transform-origin: 400px 100px; animation-delay: 0.1s">
+      <path d="M 450 50 Q 425 75 410 85 Q 435 70 450 50" fill="rgba(0,229,255,0.4)" filter="url(#starGlow)"/>
+    </g>
+    <g class="flare" style="transform-origin: 400px 100px; animation-delay: 0.3s">
+      <path d="M 450 150 Q 425 125 410 115 Q 435 130 450 150" fill="rgba(0,229,255,0.4)" filter="url(#starGlow)"/>
+    </g>
+    <g class="flare" style="transform-origin: 400px 100px; animation-delay: 0.5s">
+      <path d="M 350 150 Q 375 125 390 115 Q 365 130 350 150" fill="rgba(0,229,255,0.4)" filter="url(#starGlow)"/>
+    </g>
+    <g class="flare" style="transform-origin: 400px 100px; animation-delay: 0.7s">
+      <path d="M 350 50 Q 375 75 390 85 Q 365 70 350 50" fill="rgba(0,229,255,0.4)" filter="url(#starGlow)"/>
+    </g>
+
+    <!-- Central pulsating star -->
+    <circle cx="400" cy="100" r="32" fill="url(#starGradient)" class="star-core" filter="url(#starGlow)"/>
+    <circle cx="400" cy="100" r="32" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.6" class="star-core"/>
   </svg>
   <p class="section-sub">The STAR ODK dynamically generates optimized code for every platform and provider you target — no vendor lock-in, no rebuilding. Write your business logic in C#, debug it instantly, and let STAR generate Rust for the data layer.</p>
   <div class="features-grid">
