@@ -154,7 +154,7 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
 <!-- HERO -->
 <section class="hero">
   <div class="logo-ring">
-    <svg viewBox="0 0 100 100" fill="none">
+    <svg viewBox="0 0 100 100" fill="none" style="overflow:visible">
       <!-- inner rings & center -->
       <circle cx="50" cy="50" r="4" fill="#ffffff" style="animation:pulse 2.5s ease-in-out infinite;transform-origin:50px 50px"/>
       <circle cx="50" cy="50" r="14" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" style="animation:spinCCW 5s linear infinite;transform-origin:50px 50px"/>
@@ -169,10 +169,10 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
           <circle cx="0" cy="0" r="1.5" fill="#00e5ff"/>
         </g>
       </g>
-      <!-- holon orbiting the outer CSS border ring (r≈44) -->
+      <!-- holon orbiting the outer CSS border ring (r=50) -->
       <g style="animation:spinCW 10s linear infinite;transform-origin:50px 50px">
-        <g transform="translate(50,6)">
-          <polygon points="0,-5 4.3,-2.5 4.3,2.5 0,5 -4.3,2.5 -4.3,-2.5" fill="rgba(139,92,246,.2)" stroke="#a78bfa" stroke-width="1"/>
+        <g transform="translate(50,1)">
+          <polygon points="0,-5 4.3,-2.5 4.3,2.5 0,5 -4.3,2.5 -4.3,-2.5" fill="rgba(139,92,246,.25)" stroke="#a78bfa" stroke-width="1.2"/>
           <circle cx="0" cy="0" r="2" fill="#a78bfa"/>
         </g>
       </g>
