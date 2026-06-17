@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STAR — Web5 Developer Hub | OASIS Omniverse</title>
+<meta name="description" content="STAR is the Web5 developer hub. Build OAPPs with STAR ODK, deploy with STAR API, manage with STAR CLI, and leverage COSMIC ORM for universal data abstraction across 40+ providers.">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-deep:#030714;
+  --bg-card:#0a1535;
+  --bg-card2:#071028;
+  --text:#d0e4ff;
+  --text-dim:#a8bfd8;
+  --cyan:#00e5ff;
+  --purple:#7c3aed;
+  --gold:#f0a500;
+  --heading:#ffffff;
+  --heading-sub:rgba(255,255,255,0.65);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg-deep);color:var(--text);font-family:'Rajdhani',sans-serif;overflow-x:hidden;min-height:100vh}
+#stars-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08) 2px,rgba(0,0,0,.08) 4px);pointer-events:none;z-index:1}
+.wrap{position:relative;z-index:2}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(3,7,20,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,229,255,.1);padding:0 28px;height:62px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--cyan);text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:28px;height:28px}
+.nav-logo span{color:rgba(255,255,255,.45);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.12em;color:#a8bfd8;text-decoration:none;transition:color .2s,filter .2s}
+.nav-links a:hover{color:var(--cyan);filter:drop-shadow(0 0 6px rgba(0,229,255,.6))}
+.nav-cta{font-family:'Orbitron',sans-serif!important;font-size:11px!important;font-weight:700!important;letter-spacing:.12em!important;color:var(--bg-deep)!important;background:var(--cyan);padding:9px 18px;border-radius:6px;text-decoration:none;transition:box-shadow .2s,transform .2s!important}
+.nav-cta:hover{box-shadow:0 0 24px rgba(0,229,255,.5);transform:translateY(-1px)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes titleGlow{0%,100%{filter:drop-shadow(0 0 18px rgba(0,229,255,.5)) drop-shadow(0 0 40px rgba(0,229,255,.2))}50%{filter:drop-shadow(0 0 35px rgba(0,229,255,.9)) drop-shadow(0 0 80px rgba(0,229,255,.4)) drop-shadow(0 0 120px rgba(0,229,255,.15))}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,229,255,.08) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(124,58,237,.12) 0%,transparent 60%)}
+.logo-ring{width:100px;height:100px;border-radius:50%;border:2px solid var(--cyan);margin-bottom:28px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(0,229,255,.4),inset 0 0 20px rgba(0,229,255,.1);position:relative}
+.logo-ring svg{width:58px;height:58px}
+.hero-eyebrow{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.35em;color:var(--cyan);margin-bottom:18px;animation:fadeUp .8s ease both}
+.hero-title{font-family:'Orbitron',sans-serif;font-size:clamp(50px,10vw,110px);font-weight:900;letter-spacing:.12em;line-height:1;background:linear-gradient(180deg,#ffffff 0%,var(--cyan) 60%,rgba(0,180,220,.8) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;animation:fadeUp .8s ease both,titleGlow 3s ease-in-out infinite}
+.hero-title-sub{font-family:'Orbitron',sans-serif;font-size:clamp(16px,3.5vw,34px);font-weight:400;letter-spacing:.28em;color:rgba(255,255,255,.3);margin-bottom:32px;animation:fadeUp .8s .1s ease both}
+.hero-desc{font-size:clamp(16px,2vw,21px);color:var(--text);max-width:760px;line-height:1.75;animation:fadeUp .8s .2s ease both;margin-bottom:10px}
+.hero-desc strong{color:#ffffff}
+.hero-tagline{font-size:15px;color:#a8bfd8;animation:fadeUp .8s .3s ease both;margin-bottom:40px;letter-spacing:.03em;max-width:640px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s .4s ease both;margin-bottom:52px}
+.btn-primary{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:700;letter-spacing:.12em;padding:15px 30px;background:linear-gradient(135deg,#006d8a,var(--cyan));color:#000d14;border-radius:8px;text-decoration:none;transition:box-shadow .25s,transform .2s;display:inline-block}
+.btn-primary:hover{box-shadow:0 0 32px rgba(0,229,255,.55);transform:translateY(-2px)}
+.btn-secondary{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:600;letter-spacing:.12em;padding:15px 30px;border:1px solid rgba(0,229,255,.4);color:var(--cyan);border-radius:8px;text-decoration:none;background:rgba(0,229,255,.05);transition:background .2s,border-color .2s,transform .2s;display:inline-block}
+.btn-secondary:hover{background:rgba(0,229,255,.12);border-color:rgba(0,229,255,.7);transform:translateY(-2px)}
+
+/* SECTIONS */
+.section{padding:80px 20px;position:relative}
+.section-kicker{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.25em;color:var(--cyan);text-align:center;margin-bottom:10px}
+.section-title{font-family:'Orbitron',sans-serif;font-size:clamp(22px,4vw,36px);font-weight:700;letter-spacing:.1em;text-align:center;color:var(--heading);margin-bottom:12px}
+.section-line{display:block;width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);margin:0 auto 50px}
+.section-sub{font-size:16px;color:#a8bfd8;text-align:center;max-width:680px;margin:0 auto 50px;line-height:1.75}
+.section-sub strong{color:var(--text)}
+
+/* FEATURE GRID */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+.feature-item{background:var(--bg-card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:28px 22px;text-align:center;transition:transform .3s,border-color .3s,box-shadow .3s,filter .3s}
+.feature-item:hover{transform:translateY(-5px);border-color:rgba(0,229,255,.3);box-shadow:0 12px 40px rgba(0,229,255,.08);filter:drop-shadow(0 0 12px rgba(0,229,255,.12))}
+.feature-icon{font-size:36px;margin-bottom:14px;display:block}
+.feature-title{font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:.1em;color:var(--cyan);margin-bottom:10px}
+.feature-desc{font-size:14px;color:#a8bfd8;line-height:1.65}
+
+/* PROTOCOL GRID */
+.protocol-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:28px;max-width:1060px;margin:0 auto;align-items:stretch}
+.protocol-panel{background:rgba(10,21,53,.85);border:1px solid rgba(0,229,255,.12);border-radius:14px;padding:32px 28px;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.protocol-kicker{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--cyan);margin-bottom:12px}
+.protocol-heading{font-family:'Orbitron',sans-serif;font-size:clamp(17px,2.5vw,24px);line-height:1.3;color:var(--heading);margin-bottom:14px;letter-spacing:.04em}
+.protocol-copy{font-size:16px;line-height:1.75;color:#a8bfd8;margin-bottom:22px}
+.protocol-copy strong{color:var(--heading)}
+.protocol-list{display:grid;gap:12px}
+.protocol-point{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:14px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+.protocol-num{font-family:'Orbitron',sans-serif;font-size:14px;color:var(--cyan);letter-spacing:.12em}
+.protocol-title{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:.1em;color:var(--cyan);margin-bottom:5px}
+.protocol-text{font-size:13px;color:#a8bfd8;line-height:1.6}
+
+/* CODE BLOCK */
+.code-example{background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;font-family:'Share Tech Mono',monospace;font-size:13px;color:#c0d8ff;overflow-x:auto;margin:20px 0}
+.code-example .comment{color:#5a6a92}
+.code-example .keyword{color:var(--cyan)}
+.code-example .string{color:#00cc88}
+.code-example .success{color:var(--gold)}
+
+/* DOC LINKS */
+a{color:var(--cyan);text-decoration:none;transition:filter .3s,color .3s}
+a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
+.doc-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:32px auto 0}
+.doc-link{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--cyan);text-decoration:none;border:1px solid rgba(0,229,255,.2);border-radius:999px;padding:9px 16px;background:rgba(0,229,255,.04);transition:background .2s,border-color .2s,transform .2s}
+.doc-link:hover{background:rgba(0,229,255,.11);border-color:rgba(0,229,255,.45);transform:translateY(-2px);filter:drop-shadow(0 0 6px rgba(0,229,255,.4))}
+
+/* FOOTER */
+.footer{border-top:1px solid rgba(0,229,255,.08);padding:52px 20px 36px;text-align:center;background:rgba(0,0,0,.35)}
+.footer-logo{font-family:'Orbitron',sans-serif;font-size:20px;font-weight:900;letter-spacing:.16em;color:var(--cyan);margin-bottom:6px}
+.footer-tagline{font-size:13px;color:#a8bfd8;letter-spacing:.07em;margin-bottom:32px}
+.footer-copy{font-size:12px;color:#a8bfd8;margin-top:8px}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .protocol-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;align-items:center}
+}
+@media(max-width:520px){
+  .section{padding:60px 15px}
+  .features-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<canvas id="stars-canvas"></canvas>
+<div class="wrap">
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">
+    <svg class="nav-logo-icon" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="4" fill="#fff"/>
+      <circle cx="30" cy="30" r="14" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+      <circle cx="30" cy="30" r="24" stroke="#00e5ff" stroke-width="2"/>
+      <g><circle cx="30" cy="6" r="2.5" fill="#00e5ff"/></g>
+    </svg>
+    STAR <span>DEVELOPER HUB</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#odk">ODK</a></li>
+    <li><a href="#api">API</a></li>
+    <li><a href="#cli">CLI</a></li>
+    <li><a href="#cosmic">COSMIC ORM</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="logo-ring">
+    <svg viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="4" fill="#ffffff"/>
+      <circle cx="30" cy="30" r="14" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+      <circle cx="30" cy="30" r="24" stroke="#00e5ff" stroke-width="2"/>
+      <ellipse cx="30" cy="30" rx="28" ry="10" stroke="#00e5ff" stroke-width="1.2" opacity="0.35" transform="rotate(-30 30 30)"/>
+      <g><circle cx="30" cy="6" r="3" fill="#00e5ff"/></g>
+    </svg>
+  </div>
+  <div class="hero-eyebrow">OASIS WEB5 DEVELOPER HUB</div>
+  <h1 class="hero-title">STAR</h1>
+  <div class="hero-title-sub">SYNERGISER TRANSFORMER AGGREGATOR RESOLVER</div>
+  <p class="hero-desc">Build OAPPs once. Deploy everywhere. <strong>40+ providers. Zero rewrites.</strong></p>
+  <p class="hero-tagline">STAR is your complete Web5 development toolkit — ODK for building, API for running, CLI for publishing, and COSMIC ORM for universal data abstraction across every blockchain, database and protocol.</p>
+  <div class="hero-btns">
+    <a href="#odk" class="btn-primary">EXPLORE THE STACK ↓</a>
+    <a href="https://github.com/NextGenSoftwareUK/OASIS/releases/tag/STAR-ODK-Runtime-v3.5.0" class="btn-secondary">DOWNLOAD STAR CLI →</a>
+  </div>
+</section>
+
+<!-- STAR ODK -->
+<section class="section" id="odk" style="background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(0,229,255,.03) 0%,transparent 70%)">
+  <div class="section-kicker">DEVELOPMENT KIT</div>
+  <h2 class="section-title">STAR ODK: Build Once, Deploy Everywhere</h2>
+  <span class="section-line"></span>
+  <p class="section-sub">The STAR ODK dynamically generates optimized code for every platform and provider you target — no vendor lock-in, no rebuilding. Write your business logic in C#, debug it instantly, and let STAR generate Rust for the data layer.</p>
+  <div class="features-grid">
+    <div class="feature-item">
+      <span class="feature-icon">🧬</span>
+      <div class="feature-title">COSMIC ORM</div>
+      <div class="feature-desc">Universal abstraction layer over 40+ providers. Define data once, COSMIC translates to Holochain, Ethereum, MongoDB, Neo4j, IPFS, SQLite and more.</div>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">⚙️</span>
+      <div class="feature-title">Dynamic Code Generation</div>
+      <div class="feature-desc">C# business logic + auto-generated Rust data layer. Debug in C#, access both Rust and C# libraries. Best of both worlds.</div>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">🌌</span>
+      <div class="feature-title">Hierarchical Architecture</div>
+      <div class="feature-desc">Stars, SuperStars, GrandSuperStars and GreatGrandSuperStars. Cosmic metaphors for organizing your applications at scale.</div>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">📦</span>
+      <div class="feature-title">Multi-Provider Support</div>
+      <div class="feature-desc">Target Holochain, Ethereum, EOSIO, MongoDB, Neo4j, IPFS, SQLite and 30+ more. One codebase, infinite platforms.</div>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">✓</span>
+      <div class="feature-title">Change Management</div>
+      <div class="feature-desc">Track and version all data model changes across your application lifecycle.</div>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">✓</span>
+      <div class="feature-title">Auto-Provider Selection</div>
+      <div class="feature-desc">Automatically find the fastest, most reliable provider in your region. Built-in load balancing and failover.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STAR API -->
+<section class="section" id="api" style="background:rgba(255,255,255,.004)">
+  <div class="section-kicker">RUNTIME LAYER</div>
+  <h2 class="section-title">STAR API: Run Everywhere</h2>
+  <span class="section-line"></span>
+  <p class="section-sub">REST API for the Web5 layer. Deploy your OAPPs and let STAR API handle routing, data persistence, state management, and cross-provider coordination — all automatically.</p>
+  <div class="protocol-grid">
+    <div class="protocol-panel">
+      <div class="protocol-kicker">CAPABILITIES</div>
+      <div class="protocol-heading">What STAR API Provides</div>
+      <div class="protocol-list">
+        <div class="protocol-point"><div class="protocol-num">01</div><div><div class="protocol-title">OAPP Execution</div><div class="protocol-text">Run OAPPs across the Omniverse with cross-world state synchronization and shared quest progression.</div></div></div>
+        <div class="protocol-point"><div class="protocol-num">02</div><div><div class="protocol-title">Avatar SSO</div><div class="protocol-text">Single Sign-On through your OASIS Avatar. One identity, every application, every world.</div></div></div>
+        <div class="protocol-point"><div class="protocol-num">03</div><div><div class="protocol-title">Data Operations</div><div class="protocol-text">Read, write, query and sync data across 40+ providers with COSMIC ORM abstraction.</div></div></div>
+        <div class="protocol-point"><div class="protocol-num">04</div><div><div class="protocol-title">NFT Management</div><div class="protocol-text">Create, mint, transfer and track NFTs across every blockchain in the Omniverse.</div></div></div>
+        <div class="protocol-point"><div class="protocol-num">05</div><div><div class="protocol-title">Real-Time Sync</div><div class="protocol-text">Live data synchronization across all connected providers and players in real-time.</div></div></div>
+      </div>
+    </div>
+    <div class="protocol-panel">
+      <div class="protocol-kicker">DOCUMENTATION</div>
+      <div class="protocol-heading">Get Started with STAR API</div>
+      <p class="protocol-copy">The STAR API is fully documented with live sandbox endpoints, Swagger UI, and runnable examples. Start building immediately.</p>
+      <div style="margin-top:24px">
+        <a href="https://api.starnet.oasisomniverse.one/swagger" style="display:inline-block;margin-bottom:12px;text-decoration:none;color:var(--cyan);border:1px solid rgba(0,229,255,.3);padding:9px 18px;border-radius:6px;transition:background .2s" target="_blank">SWAGGER DOCS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAR CLI -->
+<section class="section" id="cli" style="background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(124,58,237,.05) 0%,transparent 70%)">
+  <div class="section-kicker">COMMAND LINE</div>
+  <h2 class="section-title">STAR CLI: Publish & Manage</h2>
+  <span class="section-line"></span>
+  <p class="section-sub">The STAR CLI is your gateway to STARNET. Authenticate once with your OASIS Avatar, then create, publish, search and install OAPPs — all from the command line.</p>
+  <div class="code-example">
+<span class="comment"># Authenticate with your OASIS Avatar</span>
+<span class="keyword">$</span> star avatar login
+<span class="success">✔ Signed in as Avatar @builder · karma 12,540</span>
+
+<span class="comment"># Create a new OAPP from a template</span>
+<span class="keyword">$</span> star oapp create "Quest Master" --template quest
+<span class="success">✔ Created ./QuestMaster from template quest@2.1.0</span>
+
+<span class="comment"># Publish to STARNET — versioned, signed &amp; replicated</span>
+<span class="keyword">$</span> star oapp publish ./QuestMaster
+<span class="success">✔ Published QuestMaster@1.0.0 to STARNET</span>
+<span class="success">  ↳ Stored across 5 HyperDrive providers</span>
+
+<span class="comment"># Now discoverable across the entire Omniverse...</span>
+<span class="keyword">$</span> star search "quest"
+  QuestMaster@1.0.0   ★4.8   34.2k installs
+  </div>
+  <div class="features-grid" style="margin-top:40px">
+    <div class="feature-item">
+      <span class="feature-icon">👤</span>
+      <div class="feature-title">Avatar SSO</div>
+      <div class="feature-desc">One login for everything. Publish, install, and manage all your OAPPs with Avatar authentication.</div>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">📦</span>
+      <div class="feature-title">Dependency Resolution</div>
+      <div class="feature-desc">Automatic dependency resolution and version management. Let STAR handle the complexity.</div>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">🔐</span>
+      <div class="feature-title">Semantic Versioning</div>
+      <div class="feature-desc">Automatic versioning, release management, and changelog tracking for all your OAPPs.</div>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">🌐</span>
+      <div class="feature-title">Multi-Platform</div>
+      <div class="feature-desc">Available on Windows, Linux, and macOS. Build on your platform of choice.</div>
+    </div>
+  </div>
+  <div class="doc-links">
+    <a href="https://github.com/NextGenSoftwareUK/OASIS/releases/tag/STAR-ODK-Runtime-v3.5.0" class="doc-link">DOWNLOAD STAR CLI v3.5.0</a>
+    <a href="https://github.com/NextGenSoftwareUK/OASIS/blob/master/Docs/Devs/STAR_CLI_Comprehensive_Guide.md" class="doc-link">CLI GUIDE</a>
+  </div>
+</section>
+
+<!-- COSMIC ORM -->
+<section class="section" id="cosmic" style="background:rgba(255,255,255,.004)">
+  <div class="section-kicker">DATA ABSTRACTION LAYER</div>
+  <h2 class="section-title">COSMIC ORM: Universal Data</h2>
+  <span class="section-line"></span>
+  <p class="section-sub">COSMIC is the Object-Relational Mapping system that abstracts away provider complexity. Define your data model once and COSMIC automatically translates to every storage and blockchain target.</p>
+  <div class="protocol-grid">
+    <div class="protocol-panel">
+      <div class="protocol-kicker">PROVIDERS</div>
+      <div class="protocol-heading">Supported Platforms</div>
+      <p class="protocol-copy" style="margin-bottom:18px">COSMIC supports all major blockchains, databases and protocols:</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:14px;color:#a8bfd8">
+        <div>• Holochain</div>
+        <div>• Ethereum</div>
+        <div>• EOSIO</div>
+        <div>• Solana</div>
+        <div>• MongoDB</div>
+        <div>• Neo4j</div>
+        <div>• IPFS</div>
+        <div>• SQLite</div>
+        <div>• Polygon</div>
+        <div>• SEEDS</div>
+        <div>• Telos</div>
+        <div>+ 30 more</div>
+      </div>
+    </div>
+    <div class="protocol-panel">
+      <div class="protocol-kicker">FEATURES</div>
+      <div class="protocol-heading">What COSMIC Does</div>
+      <div class="protocol-list">
+        <div class="protocol-point"><div class="protocol-num">A</div><div><div class="protocol-title">Change Tracking</div><div class="protocol-text">Automatic change management and version control built into your data models.</div></div></div>
+        <div class="protocol-point"><div class="protocol-num">B</div><div><div class="protocol-title">Auto-Replication</div><div class="protocol-text">Data automatically replicates across multiple providers for resilience and performance.</div></div></div>
+        <div class="protocol-point"><div class="protocol-num">C</div><div><div class="protocol-title">Provider Agnostic</div><div class="protocol-text">Switch providers without code changes. COSMIC handles the translation.</div></div></div>
+        <div class="protocol-point"><div class="protocol-num">D</div><div><div class="protocol-title">Query API</div><div class="protocol-text">Unified query language works across all providers — no learning provider-specific syntax.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="text-align:center;padding:80px 20px">
+  <h2 class="section-title" style="margin-bottom:20px">Ready to Build for Web5?</h2>
+  <p class="section-sub" style="margin-bottom:40px">Download the STAR CLI, sign in with your OASIS Avatar, and ship your first OAPP to the Omniverse in minutes.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <a href="https://github.com/NextGenSoftwareUK/OASIS/releases/tag/STAR-ODK-Runtime-v3.5.0" class="btn-primary">GET STAR CLI v3.5.0</a>
+    <a href="https://starnet.oasisomniverse.one" class="btn-secondary">EXPLORE STARNET →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">STAR</div>
+  <div class="footer-tagline">Web5 Developer Hub | OASIS Omniverse</div>
+  <p class="footer-copy">© 2026 OASIS Omniverse. Build once, deploy everywhere.</p>
+  <div class="doc-links" style="margin-top:24px">
+    <a href="https://oasisomniverse.one" class="doc-link">OASIS OMNIVERSE</a>
+    <a href="https://starnet.oasisomniverse.one" class="doc-link">STARNET</a>
+    <a href="https://github.com/NextGenSoftwareUK/OASIS" class="doc-link">GITHUB</a>
+  </div>
+</footer>
+
+</div>
+
+<!-- STARS CANVAS -->
+<script>
+const canvas = document.getElementById('stars-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const stars = [];
+for(let i = 0; i < 200; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 1.5,
+    op: Math.random() * 0.5 + 0.5,
+    speed: Math.random() * 0.5 + 0.1
+  });
+}
+
+function drawStars() {
+  ctx.fillStyle = 'rgba(3,7,20,1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#ffffff';
+
+  for(let s of stars) {
+    ctx.globalAlpha = s.op;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fill();
+    s.op += (Math.random() - 0.5) * 0.1;
+    s.op = Math.max(0.2, Math.min(1, s.op));
+  }
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(drawStars);
+}
+drawStars();
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
+</body>
+</html>
