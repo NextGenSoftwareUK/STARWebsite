@@ -13,7 +13,7 @@
   --bg-card2:#071028;
   --text:#d0e4ff;
   --text-dim:#a8bfd8;
-  --cyan:#00e5ff;
+  --cyan:#a78bfa;
   --purple:#7c3aed;
   --gold:#f0a500;
   --heading:#ffffff;
@@ -27,39 +27,39 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .wrap{position:relative;z-index:2}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(3,7,20,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,229,255,.1);padding:0 28px;height:62px;display:flex;align-items:center;justify-content:space-between}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(3,7,20,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(167,139,250,.1);padding:0 28px;height:62px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--cyan);text-decoration:none;display:flex;align-items:center;gap:10px}
 .nav-logo-icon{width:28px;height:28px}
 .nav-logo span{color:rgba(255,255,255,.45);font-weight:400}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
 .nav-links a{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.12em;color:#a8bfd8;text-decoration:none;transition:color .2s,filter .2s}
-.nav-links a:hover{color:var(--cyan);filter:drop-shadow(0 0 6px rgba(0,229,255,.6))}
+.nav-links a:hover{color:var(--cyan);filter:drop-shadow(0 0 6px rgba(167,139,250,.6))}
 .nav-cta{font-family:'Orbitron',sans-serif!important;font-size:11px!important;font-weight:700!important;letter-spacing:.12em!important;color:var(--bg-deep)!important;background:var(--cyan);padding:9px 18px;border-radius:6px;text-decoration:none;transition:box-shadow .2s,transform .2s!important}
-.nav-cta:hover{box-shadow:0 0 24px rgba(0,229,255,.5);transform:translateY(-1px)}
+.nav-cta:hover{box-shadow:0 0 24px rgba(167,139,250,.5);transform:translateY(-1px)}
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes spinCW{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes spinCCW{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
 @keyframes pulse{0%,100%{opacity:1;r:4}50%{opacity:.6;r:5}}
-@keyframes titleGlow{0%,100%{filter:drop-shadow(0 0 18px rgba(0,229,255,.5)) drop-shadow(0 0 40px rgba(0,229,255,.2))}50%{filter:drop-shadow(0 0 35px rgba(0,229,255,.9)) drop-shadow(0 0 80px rgba(0,229,255,.4)) drop-shadow(0 0 120px rgba(0,229,255,.15))}}
+@keyframes titleGlow{0%,100%{filter:drop-shadow(0 0 18px rgba(167,139,250,.5)) drop-shadow(0 0 40px rgba(167,139,250,.2))}50%{filter:drop-shadow(0 0 35px rgba(167,139,250,.9)) drop-shadow(0 0 80px rgba(167,139,250,.4)) drop-shadow(0 0 120px rgba(167,139,250,.15))}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,229,255,.08) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(124,58,237,.12) 0%,transparent 60%)}
-.logo-ring{width:100px;height:100px;border-radius:50%;border:2px solid var(--cyan);margin-bottom:28px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(0,229,255,.4),inset 0 0 20px rgba(0,229,255,.1);position:relative}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(167,139,250,.08) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(124,58,237,.12) 0%,transparent 60%)}
+.logo-ring{width:100px;height:100px;border-radius:50%;border:2px solid var(--cyan);margin-bottom:28px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(167,139,250,.4),inset 0 0 20px rgba(167,139,250,.1);position:relative}
 .logo-ring svg{width:100%;height:100%}
 .hero-eyebrow{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.35em;color:var(--cyan);margin-bottom:18px;animation:fadeUp .8s ease both}
-.hero-title{font-family:'Orbitron',sans-serif;font-size:clamp(50px,10vw,110px);font-weight:900;letter-spacing:.12em;line-height:1;background:linear-gradient(180deg,#ffffff 0%,var(--cyan) 60%,rgba(0,180,220,.8) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;animation:fadeUp .8s ease both,titleGlow 3s ease-in-out infinite}
+.hero-title{font-family:'Orbitron',sans-serif;font-size:clamp(50px,10vw,110px);font-weight:900;letter-spacing:.12em;line-height:1;background:linear-gradient(180deg,#ffffff 0%,var(--cyan) 60%,rgba(167,139,250,.8) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;animation:fadeUp .8s ease both,titleGlow 3s ease-in-out infinite}
 .hero-title-sub{font-family:'Orbitron',sans-serif;font-size:clamp(16px,3.5vw,34px);font-weight:400;letter-spacing:.28em;color:rgba(255,255,255,.3);margin-bottom:32px;animation:fadeUp .8s .1s ease both}
 .hero-desc{font-size:clamp(16px,2vw,21px);color:var(--text);max-width:760px;line-height:1.75;animation:fadeUp .8s .2s ease both;margin-bottom:10px}
 .hero-desc strong{color:#ffffff}
 .hero-tagline{font-size:15px;color:#a8bfd8;animation:fadeUp .8s .3s ease both;margin-bottom:40px;letter-spacing:.03em;max-width:640px}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s .4s ease both;margin-bottom:52px}
 .btn-primary{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:700;letter-spacing:.12em;padding:15px 30px;background:linear-gradient(135deg,#006d8a,var(--cyan));color:#000d14;border-radius:8px;text-decoration:none;transition:box-shadow .25s,transform .2s;display:inline-block}
-.btn-primary:hover{box-shadow:0 0 32px rgba(0,229,255,.55);transform:translateY(-2px)}
-.btn-secondary{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:600;letter-spacing:.12em;padding:15px 30px;border:1px solid rgba(0,229,255,.4);color:var(--cyan);border-radius:8px;text-decoration:none;background:rgba(0,229,255,.05);transition:background .2s,border-color .2s,transform .2s;display:inline-block}
-.btn-secondary:hover{background:rgba(0,229,255,.12);border-color:rgba(0,229,255,.7);transform:translateY(-2px)}
+.btn-primary:hover{box-shadow:0 0 32px rgba(167,139,250,.55);transform:translateY(-2px)}
+.btn-secondary{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:600;letter-spacing:.12em;padding:15px 30px;border:1px solid rgba(167,139,250,.4);color:var(--cyan);border-radius:8px;text-decoration:none;background:rgba(167,139,250,.05);transition:background .2s,border-color .2s,transform .2s;display:inline-block}
+.btn-secondary:hover{background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.7);transform:translateY(-2px)}
 
 /* SECTIONS */
 .section{padding:80px 20px;position:relative}
@@ -71,15 +71,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(3,7,20,.88);
 
 /* FEATURE GRID */
 .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;max-width:1100px;margin:0 auto}
-.feature-item{background:var(--bg-card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:28px 22px;text-align:center;transition:transform .3s,border-color .3s,box-shadow .3s,filter .3s}
-.feature-item:hover{transform:translateY(-5px);border-color:rgba(0,229,255,.3);box-shadow:0 12px 40px rgba(0,229,255,.08);filter:drop-shadow(0 0 12px rgba(0,229,255,.12))}
+.feature-item{background:var(--bg-card);border:1px solid rgba(167,139,250,.1);border-radius:12px;padding:28px 22px;text-align:center;transition:transform .3s,border-color .3s,box-shadow .3s,filter .3s}
+.feature-item:hover{transform:translateY(-5px);border-color:rgba(167,139,250,.3);box-shadow:0 12px 40px rgba(167,139,250,.08);filter:drop-shadow(0 0 12px rgba(167,139,250,.12))}
 .feature-icon{font-size:36px;margin-bottom:14px;display:block}
 .feature-title{font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:.1em;color:var(--cyan);margin-bottom:10px}
 .feature-desc{font-size:14px;color:#a8bfd8;line-height:1.65}
 
 /* PROTOCOL GRID */
 .protocol-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:28px;max-width:1060px;margin:0 auto;align-items:stretch}
-.protocol-panel{background:rgba(10,21,53,.85);border:1px solid rgba(0,229,255,.12);border-radius:14px;padding:32px 28px;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.protocol-panel{background:rgba(10,21,53,.85);border:1px solid rgba(167,139,250,.12);border-radius:14px;padding:32px 28px;box-shadow:0 20px 60px rgba(0,0,0,.2)}
 .protocol-kicker{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--cyan);margin-bottom:12px}
 .protocol-heading{font-family:'Orbitron',sans-serif;font-size:clamp(17px,2.5vw,24px);line-height:1.3;color:var(--heading);margin-bottom:14px;letter-spacing:.04em}
 .protocol-copy{font-size:16px;line-height:1.75;color:#a8bfd8;margin-bottom:22px}
@@ -91,7 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(3,7,20,.88);
 .protocol-text{font-size:13px;color:#a8bfd8;line-height:1.6}
 
 /* CODE BLOCK */
-.code-example{background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;font-family:'Share Tech Mono',monospace;font-size:13px;color:#c0d8ff;overflow-x:auto;margin:20px 0}
+.code-example{background:#0a0515;border:1px solid rgba(167,139,250,.15);border-radius:10px;padding:20px;font-family:'Share Tech Mono',monospace;font-size:13px;color:#c0d8ff;overflow-x:auto;margin:20px 0}
 .code-example .comment{color:#5a6a92}
 .code-example .keyword{color:var(--cyan)}
 .code-example .string{color:#00cc88}
@@ -99,15 +99,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(3,7,20,.88);
 
 /* DOC LINKS */
 a{color:var(--cyan);text-decoration:none;transition:filter .3s,color .3s}
-a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
+a:hover{filter:drop-shadow(0 0 6px rgba(167,139,250,.7))}
 .doc-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:32px auto 0}
-.doc-link{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--cyan);text-decoration:none;border:1px solid rgba(0,229,255,.2);border-radius:999px;padding:9px 16px;background:rgba(0,229,255,.04);transition:background .2s,border-color .2s,transform .2s}
-.doc-link:hover{background:rgba(0,229,255,.11);border-color:rgba(0,229,255,.45);transform:translateY(-2px);filter:drop-shadow(0 0 6px rgba(0,229,255,.4))}
+.doc-link{font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--cyan);text-decoration:none;border:1px solid rgba(167,139,250,.2);border-radius:999px;padding:9px 16px;background:rgba(167,139,250,.04);transition:background .2s,border-color .2s,transform .2s}
+.doc-link:hover{background:rgba(167,139,250,.11);border-color:rgba(167,139,250,.45);transform:translateY(-2px);filter:drop-shadow(0 0 6px rgba(167,139,250,.4))}
 
 /* FOOTER */
-.footer{border-top:1px solid rgba(0,229,255,.08);padding:52px 20px 36px;text-align:center;background:rgba(0,0,0,.35)}
+.footer{border-top:1px solid rgba(167,139,250,.08);padding:52px 20px 36px;text-align:center;background:rgba(0,0,0,.35)}
 .footer-logo{font-family:'Orbitron',sans-serif;font-size:20px;font-weight:900;letter-spacing:.16em;color:var(--cyan);margin-bottom:6px}
 .footer-tagline{font-size:13px;color:#a8bfd8;letter-spacing:.07em;margin-bottom:32px}
+.footer-col{text-align:left}
+.footer-col h4{font-family:'Orbitron',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.15em;color:#a78bfa;margin-bottom:1rem;text-transform:uppercase}
+.footer-col ul{list-style:none;padding:0;margin:0}
+.footer-col ul li{margin-bottom:.25rem}
+.footer-col ul li a{color:#a8bfd8;text-decoration:none;font-size:.9rem;transition:color .2s}
+.footer-col a:hover{color:#a78bfa;filter:drop-shadow(0 0 8px rgba(167,139,250,1)) drop-shadow(0 0 20px rgba(167,139,250,.8)) drop-shadow(0 0 40px rgba(167,139,250,.4))}
 .footer-copy{font-size:12px;color:#a8bfd8;margin-top:8px}
 
 /* RESPONSIVE */
@@ -138,8 +144,8 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
     <svg class="nav-logo-icon" viewBox="0 0 60 60" fill="none">
       <circle cx="30" cy="30" r="4" fill="#fff" style="animation:pulse 2.5s ease-in-out infinite;transform-origin:30px 30px"/>
       <circle cx="30" cy="30" r="14" stroke="rgba(255,255,255,.4)" stroke-width="1.5" style="animation:spinCCW 5s linear infinite;transform-origin:30px 30px"/>
-      <circle cx="30" cy="30" r="24" stroke="#00e5ff" stroke-width="2" style="animation:spinCW 8s linear infinite;transform-origin:30px 30px"/>
-      <g style="animation:spinCW 3s linear infinite;transform-origin:30px 30px"><circle cx="30" cy="6" r="2.5" fill="#00e5ff"/></g>
+      <circle cx="30" cy="30" r="24" stroke="#a78bfa" stroke-width="2" style="animation:spinCW 8s linear infinite;transform-origin:30px 30px"/>
+      <g style="animation:spinCW 3s linear infinite;transform-origin:30px 30px"><circle cx="30" cy="6" r="2.5" fill="#a78bfa"/></g>
     </svg>
     STAR <span>DEVELOPER HUB</span>
   </a>
@@ -158,15 +164,15 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
       <!-- inner rings & center -->
       <circle cx="50" cy="50" r="4" fill="#ffffff" style="animation:pulse 2.5s ease-in-out infinite;transform-origin:50px 50px"/>
       <circle cx="50" cy="50" r="14" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" style="animation:spinCCW 5s linear infinite;transform-origin:50px 50px"/>
-      <circle cx="50" cy="50" r="24" stroke="#00e5ff" stroke-width="2" style="animation:spinCW 8s linear infinite;transform-origin:50px 50px"/>
-      <ellipse cx="50" cy="50" rx="28" ry="10" stroke="#00e5ff" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.35" transform="rotate(-30 50 50)" style="animation:spinCW 12s linear infinite;transform-origin:50px 50px"/>
+      <circle cx="50" cy="50" r="24" stroke="#a78bfa" stroke-width="2" style="animation:spinCW 8s linear infinite;transform-origin:50px 50px"/>
+      <ellipse cx="50" cy="50" rx="28" ry="10" stroke="#a78bfa" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.35" transform="rotate(-30 50 50)" style="animation:spinCW 12s linear infinite;transform-origin:50px 50px"/>
       <!-- dot on inner ring -->
       <g style="animation:spinCCW 7s linear infinite;transform-origin:50px 50px"><circle cx="50" cy="36" r="2" fill="rgba(255,255,255,0.6)"/></g>
       <!-- holon on r=24 outer inner ring -->
       <g style="animation:spinCW 6s linear infinite;transform-origin:50px 50px">
         <g transform="translate(50,26)">
-          <polygon points="0,-4 3.5,-2 3.5,2 0,4 -3.5,2 -3.5,-2" fill="rgba(0,229,255,.15)" stroke="#00e5ff" stroke-width="0.8"/>
-          <circle cx="0" cy="0" r="1.5" fill="#00e5ff"/>
+          <polygon points="0,-4 3.5,-2 3.5,2 0,4 -3.5,2 -3.5,-2" fill="rgba(167,139,250,.15)" stroke="#a78bfa" stroke-width="0.8"/>
+          <circle cx="0" cy="0" r="1.5" fill="#a78bfa"/>
         </g>
       </g>
       <!-- holon orbiting the outer CSS border ring (r=50) -->
@@ -207,7 +213,7 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
 </section>
 
 <!-- STAR ODK -->
-<section class="section" id="odk" style="background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(0,229,255,.03) 0%,transparent 70%)">
+<section class="section" id="odk" style="background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(167,139,250,.03) 0%,transparent 70%)">
   <div class="section-kicker">DEVELOPMENT KIT</div>
   <h2 class="section-title">STAR ODK: Build Once, Deploy Everywhere</h2>
   <span class="section-line"></span>
@@ -225,8 +231,8 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
         <circle cx="0" cy="0" r="2.5" fill="#a78bfa"/>
       </g>
       <g id="hxc2">
-        <polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6" fill="rgba(0,229,255,.1)" stroke="#00e5ff" stroke-width="1"/>
-        <circle cx="0" cy="0" r="2.5" fill="#00e5ff"/>
+        <polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6" fill="rgba(167,139,250,.1)" stroke="#a78bfa" stroke-width="1"/>
+        <circle cx="0" cy="0" r="2.5" fill="#a78bfa"/>
       </g>
     </defs>
 
@@ -275,7 +281,7 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
     <circle r="3" fill="#a78bfa" opacity=".9" filter="url(#glow-sm2)">
       <animateMotion dur="3s" repeatCount="indefinite" path="M400,100 L262,55"/>
     </circle>
-    <circle r="3" fill="#00e5ff" opacity=".9" filter="url(#glow-sm2)">
+    <circle r="3" fill="#a78bfa" opacity=".9" filter="url(#glow-sm2)">
       <animateMotion dur="2.6s" repeatCount="indefinite" path="M625,125 L400,100"/>
     </circle>
     <circle r="3" fill="#a78bfa" opacity=".9" filter="url(#glow-sm2)">
@@ -304,12 +310,12 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
     </defs>
 
     <!-- C# Source (Left) -->
-    <rect x="80" y="105" width="80" height="40" rx="6" fill="rgba(0,229,255,.1)" stroke="#00e5ff" stroke-width="2"/>
-    <text x="120" y="135" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="13" font-weight="600" fill="#00e5ff">C#</text>
+    <rect x="80" y="105" width="80" height="40" rx="6" fill="rgba(167,139,250,.1)" stroke="#a78bfa" stroke-width="2"/>
+    <text x="120" y="135" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="13" font-weight="600" fill="#a78bfa">C#</text>
 
     <!-- STAR Engine (Center) -->
-    <circle cx="370" cy="125" r="20" fill="rgba(0,229,255,.12)" stroke="#00e5ff" stroke-width="2"/>
-    <text x="370" y="132" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" font-weight="600" fill="#00e5ff">STAR</text>
+    <circle cx="370" cy="125" r="20" fill="rgba(167,139,250,.12)" stroke="#a78bfa" stroke-width="2"/>
+    <text x="370" y="132" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" font-weight="600" fill="#a78bfa">STAR</text>
 
     <!-- Output Languages (Right side - multiple) -->
     <rect x="580" y="55" width="90" height="38" rx="5" fill="rgba(165,142,251,.1)" stroke="#a78bfa" stroke-width="1.5"/>
@@ -329,15 +335,15 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
     <text x="625" y="222" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="8" fill="#7a8ab0">Neo4j / SQLite</text>
 
     <!-- Data flow packets -->
-    <g class="flow-left"><circle cx="240" cy="125" r="4" fill="#00e5ff" filter="url(#glow-cg)"/></g>
+    <g class="flow-left"><circle cx="240" cy="125" r="4" fill="#a78bfa" filter="url(#glow-cg)"/></g>
     <g class="flow-right" style="animation-delay:0.2s"><circle cx="510" cy="70" r="4" fill="#a78bfa" filter="url(#glow-cg)"/></g>
     <g class="flow-right" style="animation-delay:0.4s"><circle cx="510" cy="115" r="4" fill="#7c3aed" filter="url(#glow-cg)"/></g>
     <g class="flow-right" style="animation-delay:0.6s"><circle cx="510" cy="160" r="4" fill="#00c8ff" filter="url(#glow-cg)"/></g>
     <g class="flow-right" style="animation-delay:0.8s"><circle cx="510" cy="205" r="4" fill="#00e582" filter="url(#glow-cg)"/></g>
-    <g class="flow-left" style="animation-delay:1.0s"><circle cx="240" cy="125" r="4" fill="#00e5ff" filter="url(#glow-cg)"/></g>
+    <g class="flow-left" style="animation-delay:1.0s"><circle cx="240" cy="125" r="4" fill="#a78bfa" filter="url(#glow-cg)"/></g>
 
     <!-- Connecting lines -->
-    <line x1="160" y1="125" x2="350" y2="125" stroke="rgba(0,229,255,.2)" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="160" y1="125" x2="350" y2="125" stroke="rgba(167,139,250,.2)" stroke-width="1" stroke-dasharray="4,4"/>
     <line x1="390" y1="125" x2="560" y2="70" stroke="rgba(165,142,251,.2)" stroke-width="1" stroke-dasharray="3,3"/>
     <line x1="390" y1="125" x2="560" y2="115" stroke="rgba(124,58,237,.2)" stroke-width="1" stroke-dasharray="3,3"/>
     <line x1="390" y1="125" x2="560" y2="160" stroke="rgba(0,200,255,.2)" stroke-width="1" stroke-dasharray="3,3"/>
@@ -401,7 +407,7 @@ a:hover{filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
       <div class="protocol-heading">Get Started with STAR API</div>
       <p class="protocol-copy">The STAR API is fully documented with live sandbox endpoints, Swagger UI, and runnable examples. Start building immediately.</p>
       <div style="margin-top:24px">
-        <a href="https://api.starnet.oasisomniverse.one/swagger" style="display:inline-block;margin-bottom:12px;text-decoration:none;color:var(--cyan);border:1px solid rgba(0,229,255,.3);padding:9px 18px;border-radius:6px;transition:background .2s" target="_blank">SWAGGER DOCS</a>
+        <a href="https://api.starnet.oasisomniverse.one/swagger" style="display:inline-block;margin-bottom:12px;text-decoration:none;color:var(--cyan);border:1px solid rgba(167,139,250,.3);padding:9px 18px;border-radius:6px;transition:background .2s" target="_blank">SWAGGER DOCS</a>
       </div>
     </div>
   </div>
@@ -507,37 +513,37 @@ This wizard will allow you create an OAPP...
 
   <h3 style="font-family:'Orbitron',sans-serif;font-size:18px;letter-spacing:.08em;color:var(--heading);text-align:center;margin:60px 0 40px;text-transform:uppercase">Powering All Layers of the Omniverse</h3>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;max-width:1100px;margin:0 auto 60px">
-    <div style="background:var(--bg-card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:20px;text-align:center">
+    <div style="background:var(--bg-card);border:1px solid rgba(167,139,250,.1);border-radius:12px;padding:20px;text-align:center">
       <div style="font-size:28px;margin-bottom:10px">🔐</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;color:var(--cyan);margin-bottom:8px;text-transform:uppercase">Identity</div>
       <div style="font-size:12px;color:#a8bfd8;line-height:1.5">Unified identity & reputation mapping</div>
     </div>
-    <div style="background:var(--bg-card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:20px;text-align:center">
+    <div style="background:var(--bg-card);border:1px solid rgba(167,139,250,.1);border-radius:12px;padding:20px;text-align:center">
       <div style="font-size:28px;margin-bottom:10px">💎</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;color:var(--cyan);margin-bottom:8px;text-transform:uppercase">Assets</div>
       <div style="font-size:12px;color:#a8bfd8;line-height:1.5">Digital & real-world assets, NFTs & more</div>
     </div>
-    <div style="background:var(--bg-card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:20px;text-align:center">
+    <div style="background:var(--bg-card);border:1px solid rgba(167,139,250,.1);border-radius:12px;padding:20px;text-align:center">
       <div style="font-size:28px;margin-bottom:10px">🛒</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;color:var(--cyan);margin-bottom:8px;text-transform:uppercase">Commerce</div>
       <div style="font-size:12px;color:#a8bfd8;line-height:1.5">Orders, payments, marketplaces</div>
     </div>
-    <div style="background:var(--bg-card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:20px;text-align:center">
+    <div style="background:var(--bg-card);border:1px solid rgba(167,139,250,.1);border-radius:12px;padding:20px;text-align:center">
       <div style="font-size:28px;margin-bottom:10px">🌍</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;color:var(--cyan);margin-bottom:8px;text-transform:uppercase">Worlds</div>
       <div style="font-size:12px;color:#a8bfd8;line-height:1.5">Virtual worlds, land, objects</div>
     </div>
-    <div style="background:var(--bg-card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:20px;text-align:center">
+    <div style="background:var(--bg-card);border:1px solid rgba(167,139,250,.1);border-radius:12px;padding:20px;text-align:center">
       <div style="font-size:28px;margin-bottom:10px">🤖</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;color:var(--cyan);margin-bottom:8px;text-transform:uppercase">AI & Agents</div>
       <div style="font-size:12px;color:#a8bfd8;line-height:1.5">Memories, skills, intelligence</div>
     </div>
-    <div style="background:var(--bg-card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:20px;text-align:center">
+    <div style="background:var(--bg-card);border:1px solid rgba(167,139,250,.1);border-radius:12px;padding:20px;text-align:center">
       <div style="font-size:28px;margin-bottom:10px">🏛️</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;color:var(--cyan);margin-bottom:8px;text-transform:uppercase">Governance</div>
       <div style="font-size:12px;color:#a8bfd8;line-height:1.5">DAOs, proposals, policies</div>
     </div>
-    <div style="background:var(--bg-card);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:20px;text-align:center">
+    <div style="background:var(--bg-card);border:1px solid rgba(167,139,250,.1);border-radius:12px;padding:20px;text-align:center">
       <div style="font-size:28px;margin-bottom:10px">☁️</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;color:var(--cyan);margin-bottom:8px;text-transform:uppercase">Infrastructure</div>
       <div style="font-size:12px;color:#a8bfd8;line-height:1.5">Compute, storage, networking</div>
@@ -616,19 +622,19 @@ This wizard will allow you create an OAPP...
 
   <h3 style="font-family:'Orbitron',sans-serif;font-size:18px;letter-spacing:.08em;color:var(--heading);text-align:center;margin:60px 0 40px;text-transform:uppercase">Performance at Scale</h3>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;max-width:1100px;margin:0 auto">
-    <div style="background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.15);border-radius:12px;padding:24px;text-align:center">
+    <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.15);border-radius:12px;padding:24px;text-align:center">
       <div style="font-size:24px;color:var(--cyan);font-family:'Orbitron',sans-serif;font-weight:700;margin-bottom:8px">Massively Parallel</div>
       <div style="font-size:13px;color:#a8bfd8">Horizontal & vertical scale without limits</div>
     </div>
-    <div style="background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.15);border-radius:12px;padding:24px;text-align:center">
+    <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.15);border-radius:12px;padding:24px;text-align:center">
       <div style="font-size:24px;color:var(--cyan);font-family:'Orbitron',sans-serif;font-weight:700;margin-bottom:8px">Ultra Low-Latency</div>
       <div style="font-size:13px;color:#a8bfd8">Millions of ops per second</div>
     </div>
-    <div style="background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.15);border-radius:12px;padding:24px;text-align:center">
+    <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.15);border-radius:12px;padding:24px;text-align:center">
       <div style="font-size:24px;color:var(--cyan);font-family:'Orbitron',sans-serif;font-weight:700;margin-bottom:8px">High Throughput</div>
       <div style="font-size:13px;color:#a8bfd8">Sync across multiple contexts</div>
     </div>
-    <div style="background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.15);border-radius:12px;padding:24px;text-align:center">
+    <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.15);border-radius:12px;padding:24px;text-align:center">
       <div style="font-size:24px;color:var(--cyan);font-family:'Orbitron',sans-serif;font-weight:700;margin-bottom:8px">Globally Distributed</div>
       <div style="font-size:13px;color:#a8bfd8">Distributed worldwide instantly</div>
     </div>
@@ -637,28 +643,28 @@ This wizard will allow you create an OAPP...
   <h3 style="font-family:'Orbitron',sans-serif;font-size:18px;letter-spacing:.08em;color:var(--heading);text-align:center;margin:60px 0 40px;text-transform:uppercase">Built For Endless Possibilities</h3>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:960px;margin:0 auto">
     <div style="display:grid;gap:12px">
-      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(0,229,255,.05);border-radius:10px">
+      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(167,139,250,.05);border-radius:10px">
         <span style="color:var(--cyan);flex-shrink:0;font-weight:700">→</span>
         <div>
           <div style="font-family:'Orbitron',sans-serif;font-size:12px;color:var(--cyan);letter-spacing:.08em;margin-bottom:4px">DeFi & Finance</div>
           <div style="font-size:12px;color:#a8bfd8">Smart contracts, yield protocols, DEXs</div>
         </div>
       </div>
-      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(0,229,255,.05);border-radius:10px">
+      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(167,139,250,.05);border-radius:10px">
         <span style="color:var(--cyan);flex-shrink:0;font-weight:700">→</span>
         <div>
           <div style="font-family:'Orbitron',sans-serif;font-size:12px;color:var(--cyan);letter-spacing:.08em;margin-bottom:4px">GameFi & Metaverses</div>
           <div style="font-size:12px;color:#a8bfd8">Game state, inventories, worlds</div>
         </div>
       </div>
-      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(0,229,255,.05);border-radius:10px">
+      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(167,139,250,.05);border-radius:10px">
         <span style="color:var(--cyan);flex-shrink:0;font-weight:700">→</span>
         <div>
           <div style="font-family:'Orbitron',sans-serif;font-size:12px;color:var(--cyan);letter-spacing:.08em;margin-bottom:4px">AI Agents & Workflows</div>
           <div style="font-size:12px;color:#a8bfd8">Agent memory, decision making</div>
         </div>
       </div>
-      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(0,229,255,.05);border-radius:10px">
+      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(167,139,250,.05);border-radius:10px">
         <span style="color:var(--cyan);flex-shrink:0;font-weight:700">→</span>
         <div>
           <div style="font-family:'Orbitron',sans-serif;font-size:12px;color:var(--cyan);letter-spacing:.08em;margin-bottom:4px">DAO Commerce</div>
@@ -667,28 +673,28 @@ This wizard will allow you create an OAPP...
       </div>
     </div>
     <div style="display:grid;gap:12px">
-      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(0,229,255,.05);border-radius:10px">
+      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(167,139,250,.05);border-radius:10px">
         <span style="color:var(--cyan);flex-shrink:0;font-weight:700">→</span>
         <div>
           <div style="font-family:'Orbitron',sans-serif;font-size:12px;color:var(--cyan);letter-spacing:.08em;margin-bottom:4px">Supply Chain & Logistics</div>
           <div style="font-size:12px;color:#a8bfd8">Tracking, provenance, compliance</div>
         </div>
       </div>
-      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(0,229,255,.05);border-radius:10px">
+      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(167,139,250,.05);border-radius:10px">
         <span style="color:var(--cyan);flex-shrink:0;font-weight:700">→</span>
         <div>
           <div style="font-family:'Orbitron',sans-serif;font-size:12px;color:var(--cyan);letter-spacing:.08em;margin-bottom:4px">Healthcare & Identity</div>
           <div style="font-size:12px;color:#a8bfd8">Patient data, credentials, privacy</div>
         </div>
       </div>
-      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(0,229,255,.05);border-radius:10px">
+      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(167,139,250,.05);border-radius:10px">
         <span style="color:var(--cyan);flex-shrink:0;font-weight:700">→</span>
         <div>
           <div style="font-family:'Orbitron',sans-serif;font-size:12px;color:var(--cyan);letter-spacing:.08em;margin-bottom:4px">Social & Communities</div>
           <div style="font-size:12px;color:#a8bfd8">User graphs, relationships, feeds</div>
         </div>
       </div>
-      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(0,229,255,.05);border-radius:10px">
+      <div style="display:flex;gap:12px;align-items:start;padding:14px;background:rgba(167,139,250,.05);border-radius:10px">
         <span style="color:var(--cyan);flex-shrink:0;font-weight:700">→</span>
         <div>
           <div style="font-family:'Orbitron',sans-serif;font-size:12px;color:var(--cyan);letter-spacing:.08em;margin-bottom:4px">Enterprise & Everything Beyond</div>
@@ -702,7 +708,7 @@ This wizard will allow you create an OAPP...
 
   <div style="max-width:1100px;margin:0 auto">
     <h4 style="font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--cyan);margin:40px 0 20px;text-transform:uppercase">Save a Holon (via Zome)</h4>
-    <pre style="background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Create a new holon with custom properties</span>
+    <pre style="background:#0a0515;border:1px solid rgba(167,139,250,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Create a new holon with custom properties</span>
 <span class="keyword">var</span> myHolon = <span class="keyword">new</span> CustomHolon();
 myHolon.Name = <span class="string">"My Quest Reward"</span>;
 myHolon.Description = <span class="string">"Epic sword found in ancient ruins"</span>;
@@ -718,7 +724,7 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"1
     <span class="comment">// Error handling: {result.Message}</span></pre>
 
     <h4 style="font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--cyan);margin:40px 0 20px;text-transform:uppercase">Load a Holon (Query Across All Providers)</h4>
-    <pre style="background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Load a holon by ID (COSMIC finds it across all providers)</span>
+    <pre style="background:#0a0515;border:1px solid rgba(167,139,250,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Load a holon by ID (COSMIC finds it across all providers)</span>
 <span class="keyword">var</span> loaded = <span class="keyword">await</span> zome.GlobalHolonData.LoadHolonAsync&lt;CustomHolon&gt;(holonId);
 
 <span class="keyword">if</span> (!loaded.IsError && loaded.Result != <span class="keyword">null</span>)
@@ -732,7 +738,7 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"1
 }</pre>
 
     <h4 style="font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--cyan);margin:40px 0 20px;text-transform:uppercase">Save with Version Control (Auto-Tracking)</h4>
-    <pre style="background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Update and save (COSMIC auto-tracks versions)</span>
+    <pre style="background:#0a0515;border:1px solid rgba(167,139,250,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Update and save (COSMIC auto-tracks versions)</span>
 myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"200"</span>; <span class="comment">// Buff the weapon</span>
 
 <span class="keyword">var</span> updateResult = <span class="keyword">await</span> holon.SaveAsync&lt;CustomHolon&gt;();
@@ -744,7 +750,7 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
 <span class="success">✓ ModifiedByAvatarId:</span> {updateResult.Result.ModifiedByAvatarId}</pre>
 
     <h4 style="font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--cyan);margin:40px 0 20px;text-transform:uppercase">Query Holons by Metadata (Search Everything)</h4>
-    <pre style="background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Find all legendary items created by an avatar</span>
+    <pre style="background:#0a0515;border:1px solid rgba(167,139,250,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Find all legendary items created by an avatar</span>
 <span class="keyword">var</span> filter = <span class="keyword">new</span> Dictionary&lt;<span class="keyword">string</span>, <span class="keyword">object</span>&gt;()
 {
     { <span class="string">"Rarity"</span>, <span class="string">"Legendary"</span> },
@@ -756,7 +762,7 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
 <span class="success">✓ Found {results.Result.Count()} legendary items</span></pre>
 
     <h4 style="font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:.08em;color:var(--cyan);margin:40px 0 20px;text-transform:uppercase">Work Across Celestial Bodies</h4>
-    <pre style="background:#0a0515;border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Save to a planet (holons auto-replicate to all providers)</span>
+    <pre style="background:#0a0515;border:1px solid rgba(167,139,250,.15);border-radius:10px;padding:20px;color:#c0d8ff;font-size:13px;overflow-x:auto;font-family:'Share Tech Mono',monospace;line-height:1.6;white-space:pre"><span class="comment">// Save to a planet (holons auto-replicate to all providers)</span>
 <span class="keyword">var</span> planet = <span class="keyword">new</span> Planet();
 <span class="keyword">var</span> saveResult = <span class="keyword">await</span> planet.SaveHolonAsync&lt;CustomHolon&gt;(myHolon);
 
@@ -860,7 +866,7 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
 </section>
 
 <!-- SMART BRICKS -->
-<section class="section" style="background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(0,229,255,.04) 0%,transparent 70%)">
+<section class="section" style="background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(167,139,250,.04) 0%,transparent 70%)">
   <div class="section-kicker">COMPOSABLE ARCHITECTURE</div>
   <h2 class="section-title">Smart Bricks: Building Blocks for Web5</h2>
   <span class="section-line"></span>
@@ -974,13 +980,13 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
     </div>
   </div>
 
-  <div style="background:rgba(0,229,255,.06);border:1px solid rgba(0,229,255,.15);border-radius:14px;padding:40px;margin:60px auto;max-width:960px;text-align:center">
+  <div style="background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.15);border-radius:14px;padding:40px;margin:60px auto;max-width:960px;text-align:center">
     <h3 style="font-family:'Orbitron',sans-serif;font-size:22px;letter-spacing:.08em;color:var(--heading);margin-bottom:24px;text-transform:uppercase">The Future We Build Together</h3>
     <p style="font-size:16px;color:#a8bfd8;line-height:1.8;margin-bottom:24px">An open, interoperable, intelligent and decentralized foundation for unlimited innovation, owned by creators, developers and communities.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;font-size:12px;letter-spacing:.1em;color:var(--cyan)">
-      <span style="background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.2);padding:8px 14px;border-radius:6px;text-transform:uppercase;font-weight:600">OPEN</span>
-      <span style="background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.2);padding:8px 14px;border-radius:6px;text-transform:uppercase;font-weight:600">DECENTRALIZED</span>
-      <span style="background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.2);padding:8px 14px;border-radius:6px;text-transform:uppercase;font-weight:600">PERMISSIONLESS</span>
+      <span style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);padding:8px 14px;border-radius:6px;text-transform:uppercase;font-weight:600">OPEN</span>
+      <span style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);padding:8px 14px;border-radius:6px;text-transform:uppercase;font-weight:600">DECENTRALIZED</span>
+      <span style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);padding:8px 14px;border-radius:6px;text-transform:uppercase;font-weight:600">PERMISSIONLESS</span>
       <span style="background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);padding:8px 14px;border-radius:6px;text-transform:uppercase;font-weight:600">PERSISTENT</span>
       <span style="background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);padding:8px 14px;border-radius:6px;text-transform:uppercase;font-weight:600">INTEROPERABLE</span>
       <span style="background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);padding:8px 14px;border-radius:6px;text-transform:uppercase;font-weight:600">AI-NATIVE</span>
@@ -989,27 +995,27 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
 
   <h3 style="font-family:'Orbitron',sans-serif;font-size:18px;letter-spacing:.08em;color:var(--heading);text-align:center;margin:60px 0 40px;text-transform:uppercase">Core Pillars</h3>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1100px;margin:0 auto">
-    <div style="text-align:center;padding:24px;border:1px solid rgba(0,229,255,.1);border-radius:12px;background:var(--bg-card)">
+    <div style="text-align:center;padding:24px;border:1px solid rgba(167,139,250,.1);border-radius:12px;background:var(--bg-card)">
       <div style="font-size:28px;margin-bottom:12px">🏛️</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:.1em;color:var(--cyan);margin-bottom:10px;text-transform:uppercase">Open Standards</div>
       <div style="font-size:13px;color:#a8bfd8;line-height:1.6">Built on open protocols and decentralized technology — no lock-in, no gatekeepers.</div>
     </div>
-    <div style="text-align:center;padding:24px;border:1px solid rgba(0,229,255,.1);border-radius:12px;background:var(--bg-card)">
+    <div style="text-align:center;padding:24px;border:1px solid rgba(167,139,250,.1);border-radius:12px;background:var(--bg-card)">
       <div style="font-size:28px;margin-bottom:12px">🔐</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:.1em;color:var(--cyan);margin-bottom:10px;text-transform:uppercase">Secure & Trusted</div>
       <div style="font-size:13px;color:#a8bfd8;line-height:1.6">Verified, validated and secured by design — cryptography and trust by default.</div>
     </div>
-    <div style="text-align:center;padding:24px;border:1px solid rgba(0,229,255,.1);border-radius:12px;background:var(--bg-card)">
+    <div style="text-align:center;padding:24px;border:1px solid rgba(167,139,250,.1);border-radius:12px;background:var(--bg-card)">
       <div style="font-size:28px;margin-bottom:12px">🧱</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:.1em;color:var(--cyan);margin-bottom:10px;text-transform:uppercase">Modular By Design</div>
       <div style="font-size:13px;color:#a8bfd8;line-height:1.6">Plug, play and compose — Smart Bricks work together without limits or friction.</div>
     </div>
-    <div style="text-align:center;padding:24px;border:1px solid rgba(0,229,255,.1);border-radius:12px;background:var(--bg-card)">
+    <div style="text-align:center;padding:24px;border:1px solid rgba(167,139,250,.1);border-radius:12px;background:var(--bg-card)">
       <div style="font-size:28px;margin-bottom:12px">🤖</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:.1em;color:var(--cyan);margin-bottom:10px;text-transform:uppercase">AI-Enhanced</div>
       <div style="font-size:13px;color:#a8bfd8;line-height:1.6">Intelligent, adaptive and continuously evolving — powered by integrated AI systems.</div>
     </div>
-    <div style="text-align:center;padding:24px;border:1px solid rgba(0,229,255,.1);border-radius:12px;background:var(--bg-card)">
+    <div style="text-align:center;padding:24px;border:1px solid rgba(167,139,250,.1);border-radius:12px;background:var(--bg-card)">
       <div style="font-size:28px;margin-bottom:12px">👥</div>
       <div style="font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:.1em;color:var(--cyan);margin-bottom:10px;text-transform:uppercase">Community Owned</div>
       <div style="font-size:13px;color:#a8bfd8;line-height:1.6">Governed by creators, developers and users — power distributed to those who build.</div>
@@ -1031,24 +1037,90 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
 <footer class="footer">
   <div class="footer-logo">STAR</div>
   <div class="footer-tagline">Web5 Developer Hub | OASIS Omniverse</div>
-  <p class="footer-copy">© 2026 OASIS Omniverse. Build once, deploy everywhere.</p>
-  <div class="doc-links" style="margin-top:24px">
-    <a href="https://oasisomniverse.one" class="doc-link">OASIS OMNIVERSE</a>
-    <a href="https://web4.oasisomniverse.one" class="doc-link">WEB4</a>
-    <a href="https://oportal.oasisomniverse.one" class="doc-link">OPORTAL</a>
-    <a href="https://starnet.oasisomniverse.one" class="doc-link">STARNET</a>
-    <a href="https://ogengine.oasisomniverse.one" class="doc-link">OGENGINE</a>
-    <a href="https://ourworld.oasisomniverse.one" class="doc-link">OUR WORLD</a>
-    <a href="https://odoom.oasisomniverse.one" class="doc-link">ODOOM</a>
-    <a href="https://oquake.oasisomniverse.one" class="doc-link">OQUAKE</a>
-    <a href="https://holonet.oasisomniverse.one" class="doc-link">HOLONET</a>
-    <a href="https://web6.oasisomniverse.one" class="doc-link">WEB6</a>
-    <a href="https://web7.oasisomniverse.one" class="doc-link">WEB7</a>
-    <a href="https://web8.oasisomniverse.one" class="doc-link">WEB8</a>
-    <a href="https://web9.oasisomniverse.one" class="doc-link">WEB9</a>
-    <a href="https://web10.oasisomniverse.one" class="doc-link">WEB10</a>
-    <a href="https://founders.oasisomniverse.one" class="doc-link">FOUNDERS NFT</a>
-    <a href="https://github.com/NextGenSoftwareUK/OASIS" class="doc-link">GITHUB</a>
+  <div class="footer-cols" style="display:grid;grid-template-columns:repeat(6,1fr);gap:40px;margin:60px 0 40px">
+    <div class="footer-col">
+      <h4>ECOSYSTEM</h4>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="margin-bottom:8px"><a href="https://oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">OASIS Omniverse</a></li>
+        <li style="margin-bottom:8px"><a href="https://web4.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Web4</a></li>
+        <li style="margin-bottom:8px"><a href="https://oportal.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">OPORTAL</a></li>
+        <li style="margin-bottom:8px"><a href="https://starnet.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">STARNET</a></li>
+        <li style="margin-bottom:8px"><a href="https://ogengine.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">OGEngine</a></li>
+        <li style="margin-bottom:8px"><a href="https://ourworld.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Our World</a></li>
+        <li style="margin-bottom:8px"><a href="https://odoom.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">ODOOM</a></li>
+        <li style="margin-bottom:8px"><a href="https://oquake.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">OQuake</a></li>
+        <li style="margin-bottom:8px"><a href="https://holonet.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">HoloNET</a></li>
+        <li style="margin-bottom:8px"><a href="https://web6.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">WEB6</a></li>
+        <li style="margin-bottom:8px"><a href="https://web7.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">WEB7</a></li>
+        <li style="margin-bottom:8px"><a href="https://web8.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">WEB8</a></li>
+        <li style="margin-bottom:8px"><a href="https://web9.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">WEB9</a></li>
+        <li style="margin-bottom:8px"><a href="https://web10.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">WEB10</a></li>
+        <li><a href="https://founders.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Founders NFT</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>BUILD</h4>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="margin-bottom:8px"><a href="https://api.web4.oasisomniverse.one/swagger" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Web4 OASIS API</a></li>
+        <li style="margin-bottom:8px"><a href="https://api.starnet.oasisomniverse.one/swagger" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Web5 STARNET API</a></li>
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS/releases/tag/STAR-ODK-Runtime-v3.5.0" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">STAR CLI/ODK</a></li>
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS/releases/tag/STAR-API-CLIENT-v1.0.0" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">STAR API Client</a></li>
+        <li style="margin-bottom:8px"><a href="https://www.nuget.org/profiles/dellams" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">NuGet (50 pkgs)</a></li>
+        <li style="margin-bottom:8px"><a href="https://oasis-web4.gitbook.io/oasis-web4-docs/" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">GitBook Docs</a></li>
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">GitHub</a></li>
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS/tree/master/Docs/Devs/API%20Documentation" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">API Reference</a></li>
+        <li><a href="https://github.com/NextGenSoftwareUK/OASIS/blob/master/Docs/Devs/DEVELOPER_DOCUMENTATION_INDEX.md" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Developer Index</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>READ</h4>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="margin-bottom:8px"><a href="https://oasisomniverse.one#flightmap" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Flight Map</a></li>
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS/blob/master/Docs/THE_OASIS_COMPREHENSIVE_WHITEPAPER.md" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Whitepaper</a></li>
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS/blob/master/Docs/OUR_WORLD_WHITEPAPER.md" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Our World Whitepaper</a></li>
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS/blob/master/Docs/INVESTOR_EVALUATION_GUIDE.md" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Investor Guide</a></li>
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS/blob/master/Docs/Devs/GETTING_STARTED_INDEX.md" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Getting Started</a></li>
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS/blob/master/Docs/Devs/STAR_CLI_Comprehensive_Guide.md" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">STAR CLI Guide</a></li>
+        <li style="margin-bottom:8px"><a href="https://www.oasisweb4.com/holonic-architecture" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Holonic Architecture</a></li>
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS/blob/master/Docs/Devs/WIKI_DOCUMENTATION_INDEX.md" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Wiki</a></li>
+        <li><a href="https://www.ourworldthegame.com/blog" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>FOUNDERS</h4>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="margin-bottom:8px"><a href="https://founders.oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Founders NFT</a></li>
+        <li style="margin-bottom:8px"><a href="https://founders.oasisomniverse.one#tiers" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Genesis Tier</a></li>
+        <li style="margin-bottom:8px"><a href="https://founders.oasisomniverse.one#tiers" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Core Tier</a></li>
+        <li><a href="https://founders.oasisomniverse.one#tiers" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Supporter Tier</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>COMMUNITY</h4>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="margin-bottom:8px"><a href="https://discord.gg/q9gMKU6" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Discord</a></li>
+        <li style="margin-bottom:8px"><a href="https://t.me/oasisweb4chat" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Telegram</a></li>
+        <li style="margin-bottom:8px"><a href="https://x.com/OASISWEB4" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">𝕏 OASIS WEB4</a></li>
+        <li style="margin-bottom:8px"><a href="https://x.com/OurWorldTheGame" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">𝕏 Our World</a></li>
+        <li style="margin-bottom:8px"><a href="https://x.com/HoloNET_OASIS" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">𝕏 HoloNET</a></li>
+        <li style="margin-bottom:8px"><a href="https://www.youtube.com/@WEB4OASIS" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">YouTube OASIS</a></li>
+        <li style="margin-bottom:8px"><a href="https://www.youtube.com/@ourworld-the-game" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">YouTube Our World</a></li>
+        <li style="margin-bottom:8px"><a href="https://www.youtube.com/channel/UC0_O4RwdY3lq1m3-K-njUxA" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">YouTube Our World Legacy</a></li>
+        <li><a href="https://www.facebook.com/ourworldthegame" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Facebook</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>SUPPORT</h4>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS/issues" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Report an Issue</a></li>
+        <li style="margin-bottom:8px"><a href="https://github.com/NextGenSoftwareUK/OASIS/discussions" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Discussions</a></li>
+        <li><a href="https://tally.so/r/WOZjNa" target="_blank" rel="noopener" style="color:#a8bfd8;text-decoration:none">Submit a Support Ticket</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(167,139,250,.15);padding-top:1.5rem;margin-top:1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <p class="footer-copy">© 2026 OASIS Omniverse. Build once, deploy everywhere.</p>
+    <p class="footer-copy">Part of the <a href="https://oasisomniverse.one" target="_blank" rel="noopener" style="color:#a8bfd8">OASIS Omniverse</a> ecosystem.</p>
   </div>
 </footer>
 
