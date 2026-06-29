@@ -36,6 +36,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(3,7,20,.88);
 .nav-links a:hover{color:var(--cyan);filter:drop-shadow(0 0 6px rgba(167,139,250,.6))}
 .nav-cta{font-family:'Orbitron',sans-serif!important;font-size:11px!important;font-weight:700!important;letter-spacing:.12em!important;color:var(--bg-deep)!important;background:var(--cyan);padding:9px 18px;border-radius:6px;text-decoration:none;transition:box-shadow .2s,transform .2s!important}
 .nav-cta:hover{box-shadow:0 0 24px rgba(167,139,250,.5);transform:translateY(-1px)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--cyan);border-radius:2px;transition:transform .3s}
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -130,12 +132,25 @@ a:hover{filter:drop-shadow(0 0 6px rgba(167,139,250,.7))}
 /* RESPONSIVE */
 @media(max-width:900px){
   .nav-links{display:none}
+  .nav-hamburger{display:flex}
   .protocol-grid{grid-template-columns:1fr}
   .hero-btns{flex-direction:column;align-items:center}
+  .features-grid{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:720px){
+  .features-grid{grid-template-columns:1fr!important}
+  .feature-item{padding:22px 18px}
+  .protocol-panel{padding:24px 20px}
 }
 @media(max-width:520px){
   .section{padding:60px 15px}
-  .features-grid{grid-template-columns:1fr}
+  .features-grid{grid-template-columns:1fr!important}
+  .feature-item{padding:18px 14px}
+  .feature-title{font-size:12px}
+  .feature-desc{font-size:14px}
+  .protocol-panel{padding:18px 16px}
+  .protocol-heading{font-size:16px}
+  .protocol-text{font-size:13px}
 }
 /* ── OMNIVERSE HIERARCHY CANVAS ── */
 .star-omni-wrap{border-radius:12px;overflow:hidden;border:1px solid rgba(139,92,246,.22);background:#030714;box-shadow:0 0 60px rgba(139,92,246,.1)}
@@ -165,8 +180,12 @@ a:hover{filter:drop-shadow(0 0 6px rgba(167,139,250,.7))}
     <li><a href="#api">API</a></li>
     <li><a href="#cli">CLI</a></li>
     <li><a href="#cosmic">COSMIC ORM</a></li>
+    <li><a href="#ai-infrastructure">AI</a></li>
+    <li><a href="#sandbox">SANDBOX</a></li>
+    <li><a href="#smart-bricks">SMART BRICKS</a></li>
     <li><a href="https://oasisomniverse.one" target="_blank" rel="noopener">ECOSYSTEM</a></li>
   </ul>
+  <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 
 <!-- HERO -->
@@ -846,7 +865,7 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
 </section>
 
 <!-- VERSION-CONTROLLED SANDBOX -->
-<section class="section" style="background:rgba(255,255,255,.004)">
+<section class="section" id="sandbox" style="background:rgba(255,255,255,.004)">
   <div class="section-kicker">SAFE INNOVATION</div>
   <h2 class="section-title">Version-Controlled Sandbox Environment</h2>
   <span class="section-line"></span>
@@ -878,7 +897,7 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
 </section>
 
 <!-- SMART BRICKS -->
-<section class="section" style="background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(167,139,250,.04) 0%,transparent 70%)">
+<section class="section" id="smart-bricks" style="background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(167,139,250,.04) 0%,transparent 70%)">
   <div class="section-kicker">COMPOSABLE ARCHITECTURE</div>
   <h2 class="section-title">Smart Bricks: Building Blocks for Web5</h2>
   <span class="section-line"></span>
@@ -1364,6 +1383,22 @@ window.addEventListener('resize', () => {
   });
   resize();
 })();
+
+// ── MOBILE NAV TOGGLE ──
+function toggleMenu(){
+  const links = document.querySelector('.nav-links');
+  if(links.style.display === 'flex'){
+    links.style.display = 'none';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:62px;left:0;right:0;background:rgba(3,7,20,.97);padding:20px 28px;gap:18px;border-bottom:1px solid rgba(167,139,250,.1)';
+  }
+}
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    const links = document.querySelector('.nav-links');
+    if(window.innerWidth < 900) links.style.display = 'none';
+  });
+});
 </script>
 </body>
 </html>
