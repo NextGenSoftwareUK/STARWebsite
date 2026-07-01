@@ -116,15 +116,16 @@ a:hover{filter:drop-shadow(0 0 6px rgba(167,139,250,.7))}
 .footer-col ul li{margin-bottom:.25rem}
 .footer-col ul li a{color:#a8bfd8;text-decoration:none;font-size:.9rem;transition:filter .3s ease,color .3s ease}
 .footer-col a:hover{color:var(--cyan);filter:drop-shadow(0 0 8px rgba(167,139,250,1)) drop-shadow(0 0 20px rgba(167,139,250,.8)) drop-shadow(0 0 40px rgba(167,139,250,.4))}
+.footer-cols{display:grid;grid-template-columns:repeat(6,1fr);gap:40px;margin:60px auto 40px;max-width:1180px}
 .footer-copy{font-size:12px;color:#a8bfd8;margin-top:8px}
 .footer-copy a{color:#a8bfd8;text-decoration:none;transition:filter .3s ease,color .3s ease}
 .footer-copy a:hover{color:var(--cyan);filter:drop-shadow(0 0 8px rgba(167,139,250,1)) drop-shadow(0 0 20px rgba(167,139,250,.8)) drop-shadow(0 0 40px rgba(167,139,250,.4))}
 @media(max-width:860px){
-  .footer-cols{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px !important;margin:40px auto 28px!important}
+  .footer-cols{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:24px 20px!important;margin:40px auto 28px!important}
   .footer-copy{display:flex;justify-content:center;text-align:center}
 }
 @media(max-width:600px){
-  .footer-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px !important;margin:28px auto 20px!important}
+  .footer-cols{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px 16px!important;margin:28px auto 20px!important}
   .footer{padding:32px 12px 20px}
   .footer-tagline{margin-bottom:0}
   .footer-col a{font-size:13px;line-height:1.35}
@@ -135,6 +136,7 @@ a:hover{filter:drop-shadow(0 0 6px rgba(167,139,250,.7))}
 @media(max-width:900px){
   nav{padding:0 16px}
   .nav-links{display:none;gap:0;margin:0;padding:0}
+  nav .nav-links li{margin:0;padding:0}
   nav .nav-links a{display:block;padding:.55rem 1.25rem;font-size:.88rem;border-bottom:1px solid rgba(167,139,250,.1)}
   .nav-hamburger{display:flex}
   .nav-cta{display:none}
@@ -1105,7 +1107,7 @@ myHolon.MetaData[<span class="string">"Damage"</span>] = <span class="string">"2
 <footer class="footer">
   <div class="footer-logo">STAR</div>
   <div class="footer-tagline">Web5 Developer Hub | OASIS Omniverse</div>
-  <div class="footer-cols" style="display:grid;grid-template-columns:repeat(6,1fr);gap:40px;margin:60px auto 40px;max-width:1180px">
+  <div class="footer-cols">
     <div class="footer-col">
       <h4>ECOSYSTEM</h4>
       <ul style="list-style:none;padding:0;margin:0">
