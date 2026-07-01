@@ -120,11 +120,13 @@ a:hover{filter:drop-shadow(0 0 6px rgba(167,139,250,.7))}
 .footer-copy a{color:#a8bfd8;text-decoration:none;transition:filter .3s ease,color .3s ease}
 .footer-copy a:hover{color:var(--cyan);filter:drop-shadow(0 0 8px rgba(167,139,250,1)) drop-shadow(0 0 20px rgba(167,139,250,.8)) drop-shadow(0 0 40px rgba(167,139,250,.4))}
 @media(max-width:860px){
-  .footer-cols{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px !important}
+  .footer-cols{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px !important;margin:40px auto 28px!important}
   .footer-copy{display:flex;justify-content:center;text-align:center}
 }
 @media(max-width:600px){
-  .footer-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px !important}
+  .footer-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px !important;margin:28px auto 20px!important}
+  .footer{padding:32px 12px 20px}
+  .footer-tagline{margin-bottom:0}
   .footer-col a{font-size:13px;line-height:1.35}
   .footer-copy{font-size:11px;line-height:1.5}
 }
@@ -132,7 +134,8 @@ a:hover{filter:drop-shadow(0 0 6px rgba(167,139,250,.7))}
 /* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:0 16px}
-  .nav-links{display:none}
+  .nav-links{display:none;gap:0;margin:0;padding:0}
+  nav .nav-links a{display:block;padding:.55rem 1.25rem;font-size:.88rem;border-bottom:1px solid rgba(167,139,250,.1)}
   .nav-hamburger{display:flex}
   .nav-cta{display:none}
   .protocol-grid{grid-template-columns:1fr}
@@ -1424,7 +1427,7 @@ function toggleMenu(){
   if(links.style.display === 'flex'){
     links.style.display = 'none';
   } else {
-    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:62px;left:0;right:0;background:rgba(3,7,20,.97);padding:20px 28px;gap:18px;border-bottom:1px solid rgba(167,139,250,.1)';
+    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:62px;left:0;right:0;background:rgba(3,7,20,.97);padding:0;gap:0;border-bottom:1px solid rgba(167,139,250,.1);z-index:999';
   }
 }
 document.querySelectorAll('.nav-links a').forEach(a => {
