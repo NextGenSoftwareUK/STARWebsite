@@ -2,7 +2,7 @@
 
 **OASIS Omniverse · Build on Web5**
 
-STAR is the Web5 developer platform of the OASIS Omniverse. It provides everything a developer needs to build, deploy and manage OAPPs (OASIS Applications) — from the ODK (OASIS Developer Kit) to the STAR API, STAR CLI, and COSMIC ORM for universal data abstraction across 40+ storage providers.
+STAR is the Web5 developer platform of the OASIS Omniverse. It provides everything a developer needs to build, deploy and manage OAPPs (OASIS Applications) — from the ODK (OASIS Developer Kit) to the STAR API, STAR CLI, and COSMIC ORM for a common data model across supported storage providers. The [OASIS provider registry](https://web4.oasisomniverse.one/providers.html) lists 234 provider projects.
 
 ## Components
 
@@ -11,10 +11,10 @@ STAR is the Web5 developer platform of the OASIS Omniverse. It provides everythi
 | **STAR ODK** | OASIS Developer Kit — scaffolding, code generation and dev toolchain for OAPPs |
 | **STAR API** | REST/GraphQL API for deploying, managing and discovering OAPPs |
 | **STAR CLI** | Command-line interface for the full STAR/OASIS workflow |
-| **COSMIC ORM** | Universal ORM with adapters for 40+ databases, blockchains and distributed storage providers |
+| **COSMIC ORM** | Universal ORM with adapters for supported databases, blockchains and distributed storage providers |
 | **STARNET** | Decentralized registry and asset store where published OAPPs are listed |
 
-## COSMIC ORM Providers (40+)
+## COSMIC ORM Provider Examples
 
 COSMIC abstracts over providers including: MongoDB, SQL Server, PostgreSQL, MySQL, SQLite, Redis, IPFS, Holochain, Ethereum, Solana, Arweave, Filecoin, ThreeFold, ActivityPub, and many more — all behind a single unified API.
 
